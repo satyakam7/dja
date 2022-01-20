@@ -1,0 +1,525 @@
+{% extends 'events.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'MainSite/pride.css' %}"  type="text/css">
+	<script src="{% static "MainSite/js/jquery.tabslet.min.js" %}" type="text/javascript"></script>
+<h1>Inter Hostel</h1>
+
+<p>The Inter Hostel GC is a competition among all the hostels in IIT Delhi where there are separate events for the boys and girls. We see 11 boys hostels fight it out for becoming the table topper in the points tally so that they win the championship. This spans across two semesters where the mood of the whole campus is to go out and watch these matches, cheer their teams and have a great time. We have seen live commentary happen of many of these matches so that the people who couldn’t come don’t lose out on the experience. Also, Inter Hostel GC sees a lot of Media coverage from bodies inside and outside the campus. </p>
+<img class="img-responsive pull-left" style="max-width: 50%; margin: auto;" src="{% static 'events/interhostel/interhostel_1.jpeg' %}" /> 
+<img class="img-responsive pull-right" style="max-width: 50%; margin: auto;" src="{% static 'events/interhostel/interhostel_2.jpeg' %}" /> 
+<p>The Inter-Hostel General Championship is one of the flagship events of BSA, IIT Delhi. During the previous year, the GC led to a lot of new heroes being born and the old ones getting more and more opportunities to shine. 
+{% comment %} <p>The General Championship, 2019 came to an end. On the men’s side, Jwalamukhi hostel sits on top of the table with 59.42 points, with Udaigiri climbing 8 places to a very close second with 57.54 points. Zanskar slips down to third, rounding up the podium with 50.57 points.</p>
+<img class="img-responsive pull-left" style="max-width: 50%; margin: auto;" src="{% static 'events/interhostel/GC_boys.jpg' %}" /> 
+<img class="img-responsive pull-right" style="max-width: 50%; margin: auto;" src="{% static 'events/interhostel/GC_girls.jpg' %}" /> 
+<p>One significant difference this year was about how the Athletics team decided that the Inter-IIT players shouldn’t be a part of the Inter-hostel GC in order to pave the way for fresh talent to come up. This resulted in not only the GC being more productive, but it also lead to the people not in the Inter-IIT team experience how is it to be there on the field running for something which is very important for their future. This also gave them an opportunity for proper simulation of a tournament experience thereby making it easier for them to adapt to the match like situations in the future.</p>
+<p>We also had a change in the format in Cricket from Round-Robin to Knockout format and this was something which lead to the matches being more intense. After lots and lots of practices, It was Jwalamukhi hostel, which after a scintillating match with Karakoram hostel in the finals, won the match. Football had favourites Girnar cruise through the league matches and the knockouts staying undefeated throughout the GC. Football had many new stars get the limelight with Chintan Somani and Harsh coming out and outperforming even their own expectations.</p>
+<p>Hockey was one sport which had an intense final as has had happened in the previous 3-4 years between Kumaon and Karakoram. However, the tables turned this time with Karakoram house reversing the trend by winning the finals against Kumaon with big efforts from all the players coming out in a cohesive manner rather than their opponents who were dependant on their 3-4 star players. </p>
+<p>Nilgiri consecutively winning gold under great captaincy of Parth Bhardwaj in Water polo giving a crushing defeat to Udaigiri in finals.</p> {% endcomment %}
+<!--<p>Lawn Tennis and Badminton were both sports which got very interesting the last season with Adhhayan bringing home the gold medal in lawn tennis while Badminton had Rushil Singh defeat the undefeated Amit Kothari in the doubles match, Semifinals. </p> -->
+<hr>
+<span style="display:block; height: 30px;"></span>
+
+
+<h1 style='text-align: center;'><b>INTER-HOSTEL RESULTS</b></h1>
+<div class='tabs' data-toggle="tabslet" style="margin-top: 1%">
+	<ul class="container list-group-horizontal">
+		<li style="display: inline;"><a href="#tab-1" class="list-group-item">2019-20</a></li>
+		<li style="display: inline;"><a href="#tab-2" class="list-group-item">2018-19</a></li>
+		
+	</ul>
+	
+	<div id='tab-1' class="container" style="text-align: center">
+		<div class='achievements_div'>
+				<h2 style="text-align:center"><b>2019-20</b>  </h2>
+				<table style="width:100%">
+					<tr>
+					  <th>SPORTS</th>
+					  <th>Girnar</th>
+                      <th>Udaigiri</th>
+					  <th>Vindhyachal</th>
+					  <th>Nilgiri</th>
+					  <th>Jwalamukhi</th>
+					  <th>Shivalik</th>
+					  <th>Kumaon</th>
+					  <th>Zanskar</th>
+					  <th>Karakoram</th>
+					  <th>Aravali</th>
+					  <th>Satpura</th>
+					</tr>
+				   <tr> <td>Swimming</td>
+							<td>10</td>
+							<td>5.88</td>
+							<td>0.78</td>
+							<td>8.23</td>
+							<td>3.72</td>
+							<td>0</td>
+							<td>0.98</td>
+							<td>0.98</td>
+							<td>0</td>
+							<td>3.33</td>
+							<td>0.39</td>
+					</tr>
+				   <tr> <td>Water Polo</td>
+							<td>5</td>
+							<td>7</td>
+							<td>1</td>
+							<td>10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>2</td>
+							<td>3</td>
+					</tr>
+				   <tr> <td>Athletics</td>
+							<td>2.40</td>
+							<td>12.40</td>
+							<td>6.40</td>
+							<td>1.60</td>
+							<td>16.80</td>
+							<td>9.20</td>
+							<td>8.80</td>
+							<td>20</td>
+							<td>3.60</td>
+							<td>0</td>
+							<td>7.20</td>
+					</tr>
+				   <tr> <td>Badminton</td>
+							<td>5</td>
+							<td>10</td>
+							<td>0</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+							<td>7</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Basketball</td>
+							<td>2</td>
+							<td>0</td>
+							<td>3</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>10</td>
+							<td>0</td>
+							<td>5</td>
+							<td>7</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Cricket</td>
+							<td>10</td>
+							<td>3</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>5</td>
+							<td>0</td>
+							<td>7</td>
+							<td>1</td>
+					</tr>
+				   <tr> <td>Football</td>
+							<td>8.5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>4</td>
+							<td>2</td>
+							<td>8.5</td>
+							<td>1</td>
+							<td>0</td>
+							<td>4</td>
+							<td>0</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Hockey</td>
+							<td>5</td>
+							<td>3</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>2</td>
+							<td>0</td>
+							<td>10</td>
+							<td>7</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>ISC</td>
+							<td>7</td>
+							<td>0.75</td>
+							<td>10</td>
+							<td>6</td>
+							<td>5.5</td>
+							<td>3</td>
+							<td>0.5</td>
+							<td>5</td>
+							<td>1.5</td>
+							<td>2</td>
+							<td>0.75</td>
+					</tr>
+				   <tr> <td>Lawn Tennis</td>
+							<td>0</td>
+							<td>1</td>
+							<td>2</td>
+							<td>7</td>
+							<td>3</td>
+							<td>0</td>
+							<td>5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>10</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Squash</td>
+							<td>0</td>
+							<td>5</td>
+							<td>10</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>2</td>
+							<td>3</td>
+							<td>7</td>
+					</tr>
+				   <tr> <td>Table Tennis</td>
+							<td>5</td>
+							<td>0</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>7</td>
+							<td>3</td>
+							<td>1</td>
+							<td>10</td>
+							<td>0</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Volleyball</td>
+							<td>0</td>
+							<td>3</td>
+							<td>0</td>
+							<td>10</td>
+							<td>5</td>
+							<td>7</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>2</td>
+					</tr>
+				   <tr> <td>Weightlifting</td>
+							<td>0</td>
+							<td>1.54</td>
+							<td>9.23</td>
+							<td>0</td>
+							<td>6.15</td>
+							<td>6.92</td>
+							<td>2.31</td>
+							<td>10</td>
+							<td>2.31</td>
+							<td>0</td>
+							<td>3.85</td>
+					</tr>
+				   <tr> <td>Freshers</td>
+							<td>2.3</td>
+							<td>6.1</td>
+							<td>8.8</td>
+							<td>2.5</td>
+							<td>9.1</td>
+							<td>10</td>
+							<td>9.5</td>
+							<td>3.8</td>
+							<td>8.1</td>
+							<td>2.4</td>
+							<td>0</td>
+					</tr>
+				   <tr> <th>Total</th>
+							<th>62.20</th>
+							<th>58.67</th>
+							<th>55.21</th>
+							<th>53.33</th>
+							<th>53.27</th>
+							<th>51.62</th>
+							<th>51.09</th>
+							<th>48.78</th>
+							<th>46.51</th>
+							<th>43.73</th>
+							<th>25.19</th>
+					</tr>
+				   <tr> <th>Rank</th>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+							<th>5</th>
+							<th>6</th>
+							<th>7</th>
+							<th>8</th>
+							<th>9</th>
+							<th>10</th>
+							<th>11</th>
+					</tr>
+				   
+				  </table>
+		</div>
+
+	</div>
+
+    <div id='tab-2' class="container" style="text-align: center">
+		<div class='achievements_div'>
+				<h2 style="text-align:center"><b>2018-19</b>  </h2>
+				<table style="width:100%"><tr>
+					  <th>SPORTS</th>
+					  <th>Jwalamukhi</th>
+                      <th>Udaigiri</th>
+					  <th>Zanskar</th>
+					  <th>Nilgiri</th>
+					  <th>Aravali</th>
+					  <th>Karakoram</th>
+					  <th>Kumaon</th>
+					  <th>Shivalik</th>
+					  <th>Girnar</th>
+					  <th>Satpura</th>
+					  <th>Vindhyachal</th>
+					</tr>
+				   <tr> <td>Swimming</td>
+							<td>4.23</td>
+							<td>10</td>
+							<td>0</td>
+							<td>6.67</td>
+							<td>7.12</td>
+							<td>0</td>
+							<td>6.89</td>
+							<td>1.34</td>
+							<td>2.67</td>
+							<td>5.56</td>
+							<td>2</td>
+					</tr>
+				   <tr> <td>Water Polo</td>
+							<td>1</td>
+							<td>7</td>
+							<td>0</td>
+							<td>10</td>
+							<td>5</td>
+							<td>0</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Athletics (all)</td>
+							<td>10</td>
+							<td>5.76</td>
+							<td>4.58</td>
+							<td>0.68</td>
+							<td>0</td>
+							<td>0.85</td>
+							<td>0.68</td>
+							<td>8.98</td>
+							<td>1.02</td>
+							<td>0.34</td>
+							<td>4.07</td>
+					</tr>
+				   <tr> <td>Athletics (freshers)</td>
+							<td>4.58</td>
+							<td>4.34</td>
+							<td>7.95</td>
+							<td>0.24</td>
+							<td>0.72</td>
+							<td>10</td>
+							<td>8.79</td>
+							<td>5.06</td>
+							<td>0.48</td>
+							<td>3.13</td>
+							<td>7.71</td>
+					</tr>
+				   <tr> <td>Badminton</td>
+							<td>3</td>
+							<td>10</td>
+							<td>7</td>
+							<td>5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Basketball</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3</td>
+							<td>0</td>
+							<td>2</td>
+							<td>10</td>
+							<td>1</td>
+							<td>5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>7</td>
+					</tr>
+				   <tr> <td>Cricket</td>
+							<td>10</td>
+							<td>7</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3</td>
+							<td>0</td>
+							<td>2</td>
+							<td>5</td>
+							<td>0</td>
+							<td>1</td>
+					</tr>
+				   <tr> <td>Football</td>
+							<td>0</td>
+							<td>7</td>
+							<td>0</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+							<td>10</td>
+							<td>1</td>
+							<td>5</td>
+							<td>0</td>
+							<td>2</td>
+					</tr>
+				   <tr> <td>Hockey</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>2</td>
+							<td>10</td>
+							<td>7</td>
+							<td>1</td>
+							<td>0</td>
+							<td>5</td>
+							<td>0</td>
+							<td>3</td>
+					</tr>
+				   <tr> <td>ISC</td>
+							<td>3.04</td>
+							<td>1.304</td>
+							<td>3.04</td>
+							<td>4.35</td>
+							<td>3.04</td>
+							<td>3.33</td>
+							<td>2.67</td>
+							<td>1.33</td>
+							<td>3.33</td>
+							<td>6.67</td>
+							<td>10</td>
+					</tr>
+				   <tr> <td>Lawn Tennis</td>
+							<td>10</td>
+							<td>0</td>
+							<td>2</td>
+							<td>0</td>
+							<td>7</td>
+							<td>0</td>
+							<td>5</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>3</td>
+					</tr>
+				   <tr> <td>Squash</td>
+							<td>0</td>
+							<td>3</td>
+							<td>1</td>
+							<td>5</td>
+							<td>7</td>
+							<td>10</td>
+							<td>0</td>
+							<td>0</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Table Tennis</td>
+							<td>0</td>
+							<td>0</td>
+							<td>10</td>
+							<td>2</td>
+							<td>5</td>
+							<td>1</td>
+							<td>3</td>
+							<td>0</td>
+							<td>7</td>
+							<td>0</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Volleyball</td>
+							<td>10</td>
+							<td>0</td>
+							<td>2</td>
+							<td>7</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3</td>
+							<td>5</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+					</tr>
+				   <tr> <td>Weightlifting</td>
+							<td>3.57</td>
+							<td>2.14</td>
+							<td>10</td>
+							<td>3.57</td>
+							<td>0</td>
+							<td>2.14</td>
+							<td>1.43</td>
+							<td>7.14</td>
+							<td>0</td>
+							<td>3.57</td>
+							<td>5.71</td>
+					</tr>
+				   <tr> <th>Total</th>
+							<th>59.42</th>
+							<th>57.544</th>
+							<th>50.57</th>
+							<th>49.51</th>
+							<th>46.88</th>
+							<th>47.32</th>
+							<th>47.46</th>
+							<th>37.85</th>
+							<th>32.5</th>
+							<th>20.27</th>
+							<th>48.49</th>
+					</tr>
+				   <tr> <th>Rank</th>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+							<th>8</th>
+							<th>7</th>
+							<th>6</th>
+							<th>9</th>
+							<th>10</th>
+							<th>11</th>
+							<th>5</th>
+					</tr>
+				   
+				  </table>
+		</div>
+
+	</div>
+
+	
+</div>	
+
+
+{% endblock body %}

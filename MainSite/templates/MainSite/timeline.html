@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block privatestyles %}
+    <link href="{% static 'MainSite/timeline.css' %}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'MainSite/events.css' %}" type="text/css">
+{% endblock privatestyles %}
+{% block privatejs %}
+    <script src="{% static "MainSite/js/jquery.tabslet.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "MainSite/js/wow.min.js" %}" type="text/javascript"></script>
+{% endblock privatejs %}
+{% block body %}
+    <script>
+    new WOW().init();
+    </script>
+{% if day_events %}
+    <h1 align="center"> TODAY !!</h1>
+    <div class="container">
+    {% for event in day_events %}
+
+<center>
+<div id="contactsb" style="display: inline-block;">
+<img src="{{ event.image_link }}" alt="Image for event" id="contactbg" />
+
+<img src="{{ event.logo_link }}" alt="Logo for event" id="contactpropic" />
+
+<span id="sbtexcon">
+    <br/>
+{{ event.long_des }}
+</span>
+<div class="sbshbor">
+{{ event.time }}    {{ event.date }}
+</div>
+</div>
+</center>
+
+    {% endfor %}
+    </div>
+{% endif %}
+<div class='tabs' data-toggle="tabslet" style="margin-top: 1%">
+	<ul class="list-group-horizontal" style="text-align: center">
+		<li style="display: inline;"><a href="#tab-1" class="list-group-item">Upcoming Events</a></li>
+		<li style="display: inline;"><a href="#tab-2" class="list-group-item">Past Events</a></li>
+	</ul>
+
+	<div id='tab-1'>
+<center>
+	<h1>Upcoming Events</h1>
+{% if not upcoming_events %}
+<p style="text-align: center;"> Sorry, there aren't any upcoming events, Check again later.</p>
+{% else %}
+<div class="timeline">
+        {% for event in upcoming_events %}
+		{% if forloop.counter|divisibleby:2 %}
+            <div class="containerTL right">
+        {% else %}
+            <div class="containerTL left">
+        {% endif %}
+            <div class="content">
+                <h2>{{ event.date }}</h2>
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src="{{ event.image_link }}" alt="Image for event">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ event.name }}</h5>
+                    <p class="card-text">{{ event.short_des }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+{% endif %}
+</center>
+    </div>
+
+	<div id='tab-2'>
+<center>
+	<h1>Past Events</h1>
+{% if not past_events %}
+<p style="text-align: center;"> Sorry, there aren't any recent past events, Check again later.</p>
+{% else %}
+<div class="timeline">
+        {% for event in past_events %}
+		{% if forloop.counter|divisibleby:2 %}
+            <div class="containerTL right">
+        {% else %}
+            <div class="containerTL left">
+        {% endif %}
+            <div class="content">
+                <h2>{{ event.date }}</h2>
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src="{{ event.image_link }}" alt="Image for event">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ event.name }}</h5>
+                    <p class="card-text">{{ event.short_des }}</p>
+                    <a href="/home/gallery/#{{ event.name }}" class="btn btn-primary">See gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+{% endif %}
+</center>
+    </div>
+</div>
+
+{% endblock body %}

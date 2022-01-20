@@ -1,0 +1,71 @@
+{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+
+<img src="{% static 'headers_and_logos/HOCKEY.jpg' %}" class="content" />
+
+<div class="infocard">
+
+    <div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>51st interiit</td> <td>2016</td> </tr>
+				<tr> <td>Silver</td> <td>54th interiit</td> <td>2019</td> </tr>
+				<tr> <td>Bronze</td> <td>53rd interiit</td> <td>2018</td> </tr>        
+		</table>
+
+<!--<p style="margin-top: 1em; margin-bottom: 1em;">History : <br/>
+Inter IIT Bombay 2014-  Bronze medal<br/>
+Udghosh, IIT-Kanpur 2014- Gold medal<br/>
+Udghosh, IIT Kanpur 2015- Silver medal <br/>
+Inter iit Sportech 2016 - Gold medal<br/>
+Inter IIT Kanpur 2016- Gold medal
+</p> -->
+<img class="img-responsive" style="max-width: 90%; margin: auto" src="{% static 'sports/hockey/Hockey 4.JPG' %}" />
+<p style="margin-top: 1em; margin-bottom: 1em;">Facilities :<br/>
+We have a separate ground for hockey where you can find our hockey team practising every evening after 6pm. Hockey sticks, and balls you will get from your respective hostel hockey captains. In case you don't get from there you can contact to captain or vice captain. Is there any issue too feel free to ask us
+</p>
+<img class="img-responsive" style="max-width: 90%; margin: auto" src="{% static 'sports/hockey/Hockey 5.JPG' %}" />
+<p style="margin-top: 1em; margin-bottom: 1em;">General : <br/>
+IIT DELHI Hockey team is the strongest team among other iits and have a great history having last year gold in INTER IIT tournament. Our hockey team have a great culture and discipline through past years and was the best team of iit Delhi last year. So we ask you to come and join the defending champions and  we promise to take you on a fun filled journey of uncountable match experiences, team efforts, tough practices, dinner treats  and memories that you gonna cheer for your lifetime.
+</p>
+<img class="img-responsive" style="max-width: 90%; margin: auto" src="{% static 'sports/hockey/Nil vs Kara (5).JPG' %}" />
+</div>
+{% endblock body %}

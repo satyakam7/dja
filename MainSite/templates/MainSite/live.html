@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block privatestyles %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'MainSite/livepage.css' %}" type="text/css">
+{% endblock privatestyles %}
+{% block privatejs %}
+    <script src="{% static "MainSite/js/jquery.tabslet.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "MainSite/js/wow.min.js" %}" type="text/javascript"></script>
+{% endblock privatejs %}
+{% block body %}
+    <script>
+    new WOW().init();
+    </script>
+
+<div class="infocard">
+<p> Sorry!, we are not live right now. Check back again later.</p>
+</div>
+
+
+{% endblock body %}

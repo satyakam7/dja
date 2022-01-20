@@ -1,0 +1,89 @@
+﻿{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+<img src="{% static 'headers_and_logos/ATHLETICS.jpg' %}" class="content" />
+
+<div class="infocard">
+
+<div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+<h4 style="margin-top: 1em; text-align: center">Boys</h4>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>53rd interiit</td> <td>2018</td> </tr>
+				<tr> <td>Gold</td> <td>Sportech,BOSM</td> <td>2017,2018,2019</td> </tr>     
+				<tr> <td>Silver</td> <td>54th interiit</td> <td>2019</td> </tr>           
+		</table>
+<h4 style="margin-top: 1em; text-align: center">Girls</h4>
+		<table class="center" style="width:90%; align: center; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>53rd,54th interiit</td> <td>2018,2019</td> </tr>
+				<tr> <td>Gold</td> <td>Sportech,Spardha</td> <td>2019</td> </tr>     
+				<tr> <td>Silver</td> <td>52nd interiit</td> <td>2017</td> </tr>           
+		</table>
+		
+
+<p style="margin-top: 1em; margin-bottom: 1em;">If you ever notice the Athletics ground in the late sweaty evenings, you’ll see youngsters repeating drills, panting and falling and yet, getting up. You’ll see their legs darting, temples throbbing and if you look close enough you’ll see their invincible spirit. To beat themselves and to win.  Blood, sweat and tears that's what it takes to win golds and that's what the Athletics team has given.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/athletics/Athletics family.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/athletics/Athletics-The medals.jpg' %}" />
+</div>
+    <p style="margin-top: 1em; margin-bottom: 1em;">From stupendous performance in BOSM'16 to Spardha'16,Athletics at IIT Delhi has grown up humongously.They have truly set an example of sportsmanship and team spirit with smashing performance in prestigious Inter IIT'16.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/athletics/FB_IMG_1500289201188.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/athletics/Athletics.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">From two bronzes at Inter IIT'14 to clean sweep in Inter IIT'16,they have come a long way. They have stellar athletes in Dileep pudi who has broken records after records and Rahul jhajhria who has impressed with his hardwork and dedication.</p>
+<p style="margin-top: 1em; margin-bottom: 1em;">The person behind such unparallel victory with 5 new Inter IIT records,is their coach Neeraj Chaudhary who has given his cent percent to the team.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/athletics/Spardha_16,IIT BHU.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/athletics/Sportech_17.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">We have a lot of events to try your hands on such as Short and long distance runs, jumps from long to triple, pole vault, and throws not just shotput and discuss but hammer and javelin too. All at athletics ground only. We Athletics,IIT Delhi invite you all to be part of  this legacy.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/athletics/FB_IMG_1500271703656.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/athletics/FB_IMG_1500289058251.jpg' %}" />
+</div>
+    <p style="margin-top: 1em; margin-bottom: 1em;">Evening practice time: 6:00 p.m.<br/>Follow us at <a href="Follow us at https://www.facebook.com/Athletics-IIT-Delhi-1552703724944013/">https://www.facebook.com/Athletics-IIT-Delhi-1552703724944013/</a></p>
+</div>
+{% endblock body %}

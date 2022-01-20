@@ -1,0 +1,27 @@
+#wrapper{
+      margin-bottom: -2%;
+      background-image: url('flbg.jpg');
+      background-size: auto;
+      /* background-repeat: no-repeat; */
+}
+
+#menuItems
+{
+      display: inline;
+      font-size:30px;
+      margin:3%;
+      font-family: Impact, Charcoal, sans-serif;
+      padding:1%;
+}
+
+@media only screen and (max-width: 600px) 
+{
+      #menuItems
+	{
+		  display: inline;
+		  font-size:18px;
+		  margin:-2%;
+		  font-family: Impact, Charcoal, sans-serif;
+		  font-weight:bold;
+	}
+}

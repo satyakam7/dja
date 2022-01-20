@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+
+        table, th, td {
+            border: 1px solid black;
+            font-size: 20px;
+            font-family: Roboto;
+            padding:10px;
+            margin-bottom:25px;
+        }
+
+        form {
+            margin : 5px;
+        }
+                
+
+ 
+</style>
+
+<div class='div'>
+
+                <h3 style="text-align:center" ><a href="{% url 'mainsite:swimming_admin_responses' %}">Back</a></h3>
+
+                
+            
+                {%if forms%}
+                    {%if unverifiedCount == 0 %}
+                    <h4>All forms received on this date have been verified</h4>
+                    {%else%}
+                    <h4>Total {{unverifiedCount}} form(s) here are not verified yet</h4>
+                    {%endif%}
+
+                    <table style="width:100%">
+                    <tr>
+                    <th>EMAIL</th>
+                    <th>FORM</th>
+                    <th>NAME</th>
+                    <th>RELATIVE</th>
+                    <th>APPROVED STATUS</th>
+                    <th>ACTIONS</th>
+                    </tr>
+                    {%for elm in forms %}
+                    <tr> 
+                        <td>{{elm.email}} </td>
+                        <td><a href='{{elm.image.url}}' download> Download </a> /
+                        <a href='{{elm.image.url}}'> View </a></td>
+                        <td>{{elm.name}} </td>
+                        <td>{% if elm.usertype == 'studenttype' %}STUDENT {% elif elm.usertype == 'nonstudenttype' %}NON-STUDENT{%else%}NON-STUDENT's RELATIVE {%endif%}</td>
+                        <td>{% if elm.approvedStatus %} Approved {% elif elm.disapprovedStatus %} Disapproved {%else%} Not Verified Yet {%endif%}</td>
+                        <td>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden"  name="step" value='2'>
+                                <input type="hidden"  name="email" value={{elm.email}}>
+                                <input type="hidden"  name="relativeCode" value={{elm.relativeCode}}>
+                                <input type="hidden"  name="action" value='approve'>
+                                <input type="hidden"  name="name" value={{elm.name}}>
+                                
+                                <button type="submit">Approve</button>
+                            </form>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden"  name="step" value='2'>
+                                <input type="hidden"  name="email" value={{elm.email}}>
+                                <input type="hidden"  name="relativeCode" value={{elm.relativeCode}}>
+                                <input type="hidden"  name="action" value='disapprove'>
+                                <input type="hidden"  name="name" value={{elm.name}}>
+                                
+                                <button type="submit">Disapprove</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {%endfor%} 
+                {%else%}
+                <div style="text-align: center;width:100%;">
+                    <p>No forms uploaded on this date</p>
+                </div>
+                {%endif%}
+              </table>
+
+</div>
+
+{% endblock body %}
+
+
+    

@@ -1,0 +1,86 @@
+{% load static %}
+<head>
+<style>
+    @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+
+    table, td {
+            border: 1px solid black;
+            font-size: 13px;
+            font-family: Roboto;
+            padding:10px;
+            margin-bottom:5px;
+        }
+    th{
+        font-size: 15px;
+        font-family: Roboto;
+
+    }
+    img {
+            height: 110px;
+            width: 110px;
+        }
+    h1{
+        font-size: 20px;
+
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div id="footer_content">(c) - page <pdf:pagenumber>
+        of <pdf:pagecount>
+    </div>
+
+    <!-- HTML Content -->
+
+    {% for disp,lst in zipped_data%}
+
+    <h1 style="text-align:center"><b>{{disp}}</b>  </h1>
+            <table style="width:100%">
+                <tr>
+                  <th>NAME</th>
+                  <th>USER TYPE</th>
+                  <th>ENTRY NO</th>
+				  <th>PHOTO</th>
+                </tr>
+               
+                    {%for elm in lst %}
+                    <tr>                         
+                        <td>{{elm.name}}</td>
+                        <td>{% if elm.relativeCode == '0000' %}
+                                 {% if elm.entryno == 'NON-STUDENT' %}
+                                    NON-STUDENT
+                                  {% else %}
+                                    STUDENT 
+                                  {% endif %} 
+                            {% else %}
+                                 NON-STUDENT's RELATIVE 
+                            {% endif %}
+                        </td>
+                        <td>{{elm.entryno}}</td>
+                        <td><img src="{% static elm.user_pic %}" ></td>
+                
+                    </tr>
+                    {%endfor%} 
+               
+              </table>
+    {%endfor%}
+
+</body>
+</html>
+

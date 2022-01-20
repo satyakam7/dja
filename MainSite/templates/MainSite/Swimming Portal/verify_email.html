@@ -1,0 +1,59 @@
+{% extends 'events.html' %}
+{% load static %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'MainSite/swfrom.css' %}">
+
+
+
+    <div class="testbox">
+      <form action="" method="POST" enctype = 'multipart/form-data'>
+	  
+		{% csrf_token %}
+
+        <input type="hidden"  name="step" value='2'>
+        <input type="hidden"  name="name" value={{name}}>
+        <input type="hidden"  name="entno" value={{entryno}}>
+        <input type="hidden"  name="phno" value={{mobileno}}>
+        <input type="hidden"  name="email" value={{email}}>
+        <input type="hidden"  name="hostel" value={{hostel}}>
+        <input type="hidden"  name="gender" value={{gender}}>
+        <input type="hidden"  name="maleSlot" value={{slot}}>
+        <input type="hidden"  name="relativeCode" value={{relativeCode}}>
+		
+		<div style = "color: red;">
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+	  
+        <h1>BOOK A SLOT</h1>
+        <div class="item">
+
+				<div >
+                  <label for="VerificationCode">A verification code has been sent to your email</label>
+				  <input type="text" name="verificationCode" placeholder="Enter Verification Code">
+				</div>  
+        </div>
+		<label for="User_pic">Your Photo (Max size 40kb)</label>
+        <input type="file" name="user_pic" onchange="ValidateSize(this)" required>
+
+        <div class="btn-block">
+          <button type="submit">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="{% static 'MainSite/swform.js' %}"></script>
+
+
+{% endblock body %}

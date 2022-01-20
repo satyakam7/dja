@@ -1,0 +1,85 @@
+{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+<img src="{% static 'headers_and_logos/AQUATICS.jpg' %}" class="content" />
+
+<div class="infocard">
+
+    <div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+<h4 style="margin-top: 0.25em; text-align: center"> <a href="https://docs.google.com/spreadsheets/d/1n_f9VWmbGI00Cbu7CE75dMXLKKujPN9vAfpC6pJn09w/edit#gid=0">Inter IIT 2019</a></h4>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>Stroke</th>
+				  <th>Distance</th>
+				  <th>Position</th>
+				</tr>
+				<tr> <td>Freestyle</td> <td>100m</td> <td>2nd</td> </tr>
+				<tr> <td>Freestyle</td> <td>4*100relay</td> <td>2nd</td> </tr>
+				<tr> <td>Backstroke</td> <td>50m</td> <td>2nd</td> </tr>
+				<tr> <td>Freestyle</td> <td>50m</td> <td>3rd</td> </tr>
+		</table>
+<h4 style="margin-top: 0.25em; text-align: center"> <a href="https://docs.google.com/spreadsheets/d/1n_f9VWmbGI00Cbu7CE75dMXLKKujPN9vAfpC6pJn09w/edit#gid=667022016">Inter IIT 2018</a></h4>
+		<table class="center" style="width:90%; margin-bottom: 2em; text-align: center">
+				<tr>
+				  <th>Stroke</th>
+				  <th>Distance</th>
+				  <th>Position</th>
+				</tr>
+				<tr> <td>Freestyle</td> <td>100m</td> <td>1st</td> </tr>
+				<tr> <td>Freestyle</td> <td>50m</td> <td>2nd</td> </tr>
+				<tr> <td>Freestyle</td> <td>100m</td> <td>2nd</td> </tr>
+				<tr> <td>Freestyle</td> <td>200m</td> <td>2nd</td> </tr>
+				<tr> <td>Freestyle</td> <td>4*100relay</td> <td>2nd</td> </tr>
+		</table>
+		
+<p style="margin-top: 1em; margin-bottom: 1em;">The olympic size pool at IIT Delhi is a sight to behold. The 50m×25m 10 lane pool, surrounded by high stone walls forms the perfect workout place. Yes, the best sport and a state of the art pool.</p>
+<p style="margin-top: 1em; margin-bottom: 1em;">The only sport where you do more; kick more than a soccer player; Turn more than a dancer; do more laps than a runner; more flips than a cheerleader and more dives than a baseball player.</p>
+<img class="img-responsive" style="max-width: 90%; margin: auto" src="{% static 'sports/aquatics/cover_photo.jpeg' %}" />
+<p style="margin-top: 1em; margin-bottom: 1em;">Our performance has been consistently improving. The performance by the aquatics team at Inter IIT Meet 2016 was stellar in all events barring water polo. We were the first runners up in the women's category and the second runners up in swimming, men. We hope to better our performance this year in all events, including water polo.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/aquatics/Screenshot_20170717-144652_01.png' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/aquatics/14566254_1845451062356438_3457108508152200015_o.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">The only sport where starting from scratch with infinite determination can land you a spot in the institute team, the aquatics family. A place where there is no prerequisite except for a strong will.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/aquatics/Screenshot_20170717-144701_01.png' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/aquatics/freestyle.jpeg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">The pool membership can be obtained by filling out a form and getting a medical certificate from the IITD hospital. The fees can be paid via a demand draft or online. The pool stays open from April end to mid October.</p>
+<p style="margin-top: 1em; margin-bottom: 1em;">There are multiple slots to choose from, according to one's convenience including the exclusive slot for ladies.</p>
+<img class="img-responsive" style="max-width: 90%; margin: auto;" src="{% static 'sports/aquatics/waterpolo.jpeg' %}">
+</div>
+{% endblock body %}

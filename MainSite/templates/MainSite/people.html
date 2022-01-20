@@ -1,0 +1,526 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block privatestyles %}
+    <link rel="stylesheet" href="{% static 'MainSite/people_card.css' %}"  type="text/css">
+{% endblock privatestyles %}
+{%  block privatejs %}
+    <script src="{% static "MainSite/js/jquery.tabslet.min.js" %}" type="text/javascript"></script>
+{%  endblock privatejs %}
+
+{% block body %}
+
+<div class='tabs' data-toggle="tabslet" style="margin-top: 2%">
+	<ul class="container list-group-horizontal">
+		<li style="display: inline;font-size:15px"><a href="#tab-1" class="list-group-item">Faculty</a></li>
+		<li style="display: inline;font-size:15px"><a href="#tab-8" class="list-group-item">Staff Members</a></li>
+		<li style="display: inline;font-size:15px"><a href="#tab-7" class="list-group-item">Student Head</a></li>
+		<li style="display: inline;font-size:15px"><a href="#tab-2" class="list-group-item">Sports Secys</a></li>
+		<li style="display: inline;font-size:15px"><a href="#tab-3" class="list-group-item">Executives</a></li>
+		<li style="display: inline;font-size:15px"><a href="#tab-4" class="list-group-item">Junior Executives</a></li>
+		<li style="display: inline;font-size:15px"><a href="#tab-6" class="list-group-item">Coaches</a></li>
+        <li style="display: inline;font-size:15px"><a href="#tab-5" class="list-group-item">Caps and Vice Caps</a></li>
+	</ul>
+	<div id='tab-1' class="container" style="text-align: center">
+        <h3> Faculty Members </h3>
+        {% for person in faculty_list %}
+        <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i>  </a>
+        </div>
+            <p> </p>
+        {% endfor %}
+    </div>
+	<div id='tab-2' class="container" style="text-align: center">
+        <h3> Sport Secretaries </h3>
+        {% for person in secretaries %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+		
+    </div>
+	<div id='tab-3' class="container" style="text-align: center">
+        <h3> BSA Executives </h3>
+        {% for person in executives %}
+        <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+	<div id='tab-4' class="container" style="text-align: center">
+        <h3> BSA Junior Executives </h3>
+        {% for person in junior_executives %}
+        <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+    <div id='tab-5' class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+	<div id='tab-7' class="container" style="text-align: center">
+        <h3> Student Head </h3>
+
+        {% for person in general_secretary %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>General Secretary</h5>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:bsagsec@iitd.ac.in"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+
+        {% for person in deputy_general_secretary %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>Deputy General Secretary</h5>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:Deputy.General.Secretary.Bsa@admin.iitd.ac.in"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+	</div>	
+	
+	<div id='tab-8' class="container" style="text-align: center">
+		<h3> Staff Members </h3>
+		<div class="card">
+		<img src="/static/people/deepaknegi.jpg" alt="Sanidhya Tiwari" height="250px" style="width:100%">
+		<h3>Deepak Negi</h3>
+		<h5>Sports Officer</h5>
+		<a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">+91-11-2659 6986</span>
+            </div>
+        </a>
+		<a class="customa" href="mailto:soiitd@admin.iitd.ac.in"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=" https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+		<img src="/static/people/anil_kumar.jpeg" alt="Anil Kumar" height="250px" style="width:100%">
+		<h3>Anil Kumar</h3>
+		<h5>Deputy Sports Officer</h5>
+		<a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext"></span>
+            </div>
+        </a>
+		<a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+		</div>
+		
+		<div class="card">
+		<img src="/static/people/rekha.jpeg" alt="Rekha Sati Deoli" height="250px" style="width:100%">
+		<h3>Rekha Sati Deoli</h3>
+		<h5>Assistant Sports Officer</h5>
+		<a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext"></span>
+            </div>
+        </a>
+		<a class="customa" href="mailto: rekhasatiitd@gmail.com"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="https://www.facebook.com/rekha.satideoli"><i class="fa fa-facebook"></i></a>
+		</div>
+		
+		<div class="card">
+		<img src="/static/people/neerajchoudhary.jpg" alt="Neeraj Chowdhury" height="250px" style="width:100%">
+		<h3>Neeraj Chowdhury</h3>
+		<h5>Sports Coach</h5>
+		<a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext"></span>
+            </div>
+        </a>
+		<a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="https://www.facebook.com/neeraj.chaudhary.35977"><i class="fa fa-facebook"></i></a>
+		</div>
+		
+		<div class="card">
+		<img src="/static/people/surender.jpeg" alt="Surender Prasad" height="250px" style="width:100%">
+		<h3>Surender Prasad</h3>
+		<h5>J.L.A.</h5>
+		<a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext"></span>
+            </div>
+        </a>
+		<a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+		</div>
+		
+		<div class="card">
+		<img src="/static/people/ram_bali.jpeg" alt="Ram Bali" height="250px" style="width:100%">
+		<h3>Ram Bali</h3>
+		<h5>Grounds Man</h5>
+		<a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext"></span>
+            </div>
+        </a>
+		<a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+		</div>
+	</div>
+	<div id='tab-6' class="container" style="text-align: center">
+        <h3> Coaches </h3>
+        <div class="card">
+        <img src="/static/people/neeraj_sir.jpg" alt="Neeraj Choudhary" height="250px" style="width:100%">
+        <h3>Neeraj Choudhary</h3>
+        <h5>Coach</h5>
+        <p class="title">Athletics</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9968394731</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/athletics_coach2.png" alt="Amit Khanna" height="250px" style="width:100%">
+        <h3>Amit Khanna</h3>
+        <h5>Coach</h5>
+        <p class="title">Athletics</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9871010610</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/puneet_sir.jpg" alt="Puneet" height="250px" style="width:100%">
+        <h3>Puneet</h3>
+        <h5>Coach</h5>
+        <p class="title">Athletics</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">8299762340</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/karan_sir.jpg" alt="Karan" height="250px" style="width:100%">
+        <h3>Karan</h3>
+        <h5>Coach</h5>
+        <p class="title">Athletics</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9871165132</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/lalit_sir.jpg" alt="Lalit Kumar" height="250px" style="width:100%">
+        <h3>Lalit Kumar</h3>
+        <h5>Coach</h5>
+        <p class="title">Athletics</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9911843881</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/mann_sir.jpg" alt="Kuldeep Mann" height="250px" style="width:100%">
+        <h3>Kuldeep Mann</h3>
+        <h5>Coach</h5>
+        <p class="title">Athletics</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9871635925</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/hockey_coach.png" alt="Ravindra Rawat" height="250px" style="width:100%">
+        <h3>Ravindra Rawat</h3>
+        <h5>Coach</h5>
+        <p class="title">Hockey</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9999681774</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/cricket_coach.png" alt="Abhinav kachru" height="250px" style="width:100%">
+        <h3>Abhinav kachru</h3>
+        <h5>Coach</h5>
+        <p class="title">Cricket</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">8527175300</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		<div class="card">
+        <img src="/static/people/basketball_coach.png" alt="Ankur Tomar" height="250px" style="width:100%">
+        <h3>Ankur Tomar</h3>
+        <h5>Coach</h5>
+        <p class="title">Basketball</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">8447551929</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/football_coach.png" alt="Akshay Unni" height="250px" style="width:100%">
+        <h3>Akshay Unni</h3>
+        <h5>Coach</h5>
+        <p class="title">Football</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9911501889</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/squash_coach.png" alt="Aakash Sharma" height="250px" style="width:100%">
+        <h3>Aakash Sharma</h3>
+        <h5>Coach</h5>
+        <p class="title">Squash</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9199109345</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/tt_coach.png" alt="Vikrant sharma " height="250px" style="width:100%">
+        <h3>Vikrant sharma </h3>
+        <h5>Coach</h5>
+        <p class="title">Table Tennis</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">8054096959</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/weightlifting_coach.png" alt="S.K. Bakshi" height="250px" style="width:100%">
+        <h3>S.K. Bakshi</h3>
+        <h5>Coach</h5>
+        <p class="title">Weightlifting</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9717399245</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/badminton_coach.png" alt="Giriraj Kumar" height="250px" style="width:100%">
+        <h3>Giriraj Kumar</h3>
+        <h5>Coach</h5>
+        <p class="title">Badminton</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">8588988955</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/aquatics_coach.png" alt="Ajay Patil" height="250px" style="width:100%">
+        <h3>Ajay Patil</h3>
+        <h5>Coach</h5>
+        <p class="title">Aquatics</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9811678089</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/tennis_coach.png" alt="Sunny" height="250px" style="width:100%">
+        <h3>Sunny</h3>
+        <h5>Coach</h5>
+        <p class="title">Lawn Tennis</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9999989189</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/volleyball_coach.png" alt="Kuljit Singh" height="250px" style="width:100%">
+        <h3>Kuljit Singh</h3>
+        <h5>Coach</h5>
+        <p class="title">Volleyball</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9891108914</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+		<div class="card">
+        <img src="/static/people/chess_coach.png" alt="GB Joshi" height="250px" style="width:100%">
+        <h3>GB Joshi</h3>
+        <h5>Coach</h5>
+        <p class="title">Chess</p>
+        <p class="title"></p>
+        <p></p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">9540040173</span>
+            </div>
+        </a>
+        <a class="customa" href=""><i class="fa fa-envelope"></i></a>
+        <a class="customa" href=""><i class="fa fa-facebook"></i></a>
+        </div>
+		
+    </div>
+</div>
+
+
+
+{% endblock body %}

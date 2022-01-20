@@ -1,0 +1,126 @@
+		.pride_div {
+			background-color: #E2E1E0;
+            border: 2px solid black;
+			margin: 40px;
+			margin-top: 15px;
+			border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            padding: 40px;
+            padding-top: 20px;
+            overflow: auto;
+			width:90%;
+			}
+        .pride_image_div{
+            text-align: center;
+            width: 100%;
+            margin: 20px;
+            }
+
+        .pride_image{
+            height: 30%;
+            width: 30%;
+        }
+        .name_head_div{
+            font-family:  SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;; font-size: 250%;
+            float: top;
+            text-align: center;
+            width: 100%;
+            font-weight: 1000;
+        }
+        .pride_text_div{
+
+            float: top;
+            width: 100%;
+            text-align: center;
+            font-size: 22px;
+            font-family: Roboto;       
+        }
+        .achievements_div
+        {
+            float: top;
+            width: 100%;
+            text-align: left;
+            font-size: 250%;
+            font-family: Roboto;          
+        }
+        table, th, td {
+            border: 1px solid black;
+            font-size: 70%;
+            font-family: Roboto;
+            padding:10px;
+            margin-bottom:25px;
+        }
+		.non-table-achievements{
+			font-size:50%
+		}
+
+		@media only screen and (max-width: 600px) 
+		{
+		  		.pride_div {
+			background-color: #E2E1E0;
+            border: 2px solid black;
+			margin: 10px;
+			margin-top: 15px;
+			border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            padding: 40px;
+            padding-top: 20px;
+            overflow: auto;
+			width:95%;
+			}
+        .pride_image_div{
+            text-align: center;
+            width: 100%;
+            margin: 20px;
+            }
+
+        .pride_image{
+            height: 80%;
+            width: 80%;
+        }
+        .name_head_div{
+            font-family:  SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;; font-size: 180%;
+            float: top;
+            text-align: center;
+            width: 100%;
+            font-weight: 1000;
+        }
+        .pride_text_div{
+
+            float: top;
+            width: 100%;
+            text-align: center;
+            font-size: 80%;
+            font-family: Roboto;       
+        }
+        .achievements_div
+        {
+            float: top;
+            width: 100%;
+            text-align: left;
+            font-size: 100%;
+            font-family: Roboto;          
+        }
+        table, th, td {
+            border: 1px solid black;
+            font-size: 70%;
+            font-family: Roboto;
+            padding:10px;
+            margin-bottom:25px;
+        }
+		h1{
+			font-size:120%;
+		}
+		h3{
+			font-size:120%;
+		}
+		h2{
+			font-size:120%;
+		}
+		.non-table-achievements{
+			font-size:80%
+		}
+		}
+                
+
+ 

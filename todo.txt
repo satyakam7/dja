@@ -1,0 +1,7 @@
+Fix inheritance of templates
+Fix carousel aspect ratio
+Parallax height to low on widescreens
+Parallax image repeated
+Improve fonts and backgrounds
+Improve contact section
+

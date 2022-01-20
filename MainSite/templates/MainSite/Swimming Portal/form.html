@@ -1,0 +1,118 @@
+{% extends 'events.html' %}
+{% load static %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'MainSite/swfrom.css' %}">
+
+
+
+    <div class="testbox">
+      <form action="" method="POST" enctype = 'multipart/form-data'>
+	  
+		{% csrf_token %}
+		
+
+		
+		<div style = "color: red;">
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+	  
+        <h1>BOOK A SLOT</h1>
+		<p> (Please make sure you have uploaded the swimming form and it has been approved)</p>
+        <div class="item">
+
+				<div id="usertypeDiv">
+					<select class="form-control" id="userType" name="userType">
+					  <option value="studenttype">STUDENT</option>
+					  <option value="nonstudenttype">NON-STUDENT</option>
+					  <option value="nonstudentrelativetype">NON-STUDENT's RELATIVE</option>
+					</select>
+				</div>
+				  <input type="hidden"  name="step" value='1'>
+                  <input class="fname" type="text" name="name" placeholder="Full name" required>
+				  <input type="email" name="email" placeholder="Institute Email ending with '@iitd.ac.in'" required>
+				  <input type="tel" name="phno" placeholder="Phone number" pattern="[0-9]*" required>
+				  
+				  
+				  <div id="entnoDiv">
+				  <input type="text" name="entno" placeholder="Entry Number">
+				  </div>
+				  
+				  <div id="hostelDiv">
+				  <input type="text" name="hostel" placeholder="Hostel">
+				  </div>
+
+				  <div id="relativeDiv" style="display:none;">
+				  <input type="text" name="relativeCode" placeholder="Relative Code">
+				  </div>
+				  
+				  <select class="form-control" id="Gender" name='gender'>
+						  <option value="Male">Male</option>
+						  <option value="Female">Female</option>
+				  </select>
+
+					
+
+					
+					
+		<div id="maleSlotDiv">
+          {% comment %} <div class='slots-left-div slotTTS_67AM' >*{{slotTTS_67AM}}</div> {% endcomment %}
+			<div id='slots-left-div' >
+			{%for name,places in placesLeft %}
+				{%if  forloop.counter == 1%}
+					<div id = '{{name}}' class='slots-div1'>{{places}}</div>
+				{% else %}
+					<div id = '{{name}}' class='slots-div'>{{places}}</div>
+				{% endif%}
+				
+           	{%endfor%}
+		    </div>
+          
+          <label for="maleSlot">Slot : </label>
+
+					<select class="form-control" id="maleSlot" name="maleSlot">
+		  			{%for name,display in slots %}
+						<option value={{name}}>{{display}}</option>	
+		   			{%endfor%}
+					  </select>
+		</div>
+					
+					
+					
+		{% comment %} <div id="femaleSlotDiv">
+
+          <label for="femaleSlot">Slot : </label>
+
+			<select class="form-control" id="femaleSlot" name="femaleSlot">		
+					{%for name,display in slots %}
+						<option value={{display}}>{{display}}</option>	
+		   			{%endfor%}
+			</select>
+					
+		</div> {% endcomment %}
+		  
+        </div>
+		
+		
+		
+        <div class="btn-block">
+          <button type="submit">REGISTER</button>
+        </div>
+      </form>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="{% static 'MainSite/swform.js' %}"></script>
+
+
+{% endblock body %}

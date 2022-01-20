@@ -1,0 +1,45 @@
+{% extends 'events.html' %}
+{% load static %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'MainSite/swfrom.css' %}">
+
+
+
+    <div class="testbox">
+      <form action="" method="POST" enctype = 'multipart/form-data'>
+	  
+		{% csrf_token %}
+		
+
+		
+		<div style = "color: red;">
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+	  
+        <h1>Submit Swimming Form</h1>
+        <div class="item">
+				<input type="hidden"  name="step" value='1'>
+          
+				  <input type="email" name="email" placeholder="Institute Email ending with '@iitd.ac.in'" required>
+				  
+          <button type="submit">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="{% static 'MainSite/swform.js' %}"></script>
+
+
+{% endblock body %}

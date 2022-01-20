@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block privatestyles %}
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700&subset=latin-ext,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'MainSite/scroll.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/slider.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/parallax.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/grid.css' %}" />
+{% endblock privatestyles %}
+{% block privatejs %}
+    <script src="{% static "MainSite/js/jssor.slider-27.1.0.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "MainSite/js/slider.js" %}" type="text/javascript"></script>
+    <script src="{% static "MainSite/js/parallax.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "MainSite/js/wow.min.js" %}" type="text/javascript"></script>
+
+
+{% endblock privatejs %}
+{% block body %}
+
+    <script>
+    new WOW().init();
+    </script>
+
+    <div id="loading"></div>
+    <script>
+    
+    </script>
+
+
+<div id="jssor_1" style="position:relative; width:980px;height:380px;overflow:hidden;visibility:hidden; z-index: 1">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="{% static 'MainSite/img_slideshow/spin.svg' %}" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/001.jpg' %}" />
+                <div data-u="caption" data-t="2" style="position:absolute;top:30px;left:-505px;width:500px;height:80px;background-color:rgb(216,216,216);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">Board for Sports Activities, IIT - Delhi, welcomes you</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/002.jpg' %}" />
+                <div data-u="caption" data-t="5" style="position:absolute;top:30px;left:600px;width:500px;height:40px;background-color:rgb(216,216,216);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">Scroll down to get started</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/003.jpg' %}" />
+                <a href="https://medium.com/" style="color: black"><div data-u="caption" data-t="2" style="position:absolute;top:30px;left:-505px;width:500px;height:40px;background-color:rgb(216,216,216);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">Check out our blog at medium</div></a>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/004.jpg' %}" />
+                <a href="{% url 'mainsite:live' %}" style="color: black"><div data-u="caption" data-t="3" style="position:absolute;top:30px;left:30px;width:500px;height:40px;background-color:rgb(216,216,216);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">Click here to follow up on us LIVE !!</div></a>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/005.jpg' %}" />
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/006.jpg' %}" />
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/007.jpg' %}" />
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/008.jpg' %}" />
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/009.jpg' %}" />
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/010.jpg' %}" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora053" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora053" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+</div>
+
+
+<div class="microsoft scrollhead" style="background-color:#115588">
+<h1> <font color="white"> Announcements </font> </h1>
+</div>
+<div class="microsoft scrollcustom shadow" style="border-top:1px solid #cccccc;background-color:lightblue">
+<p class="marquee">
+	<font color="black">
+    <ul class="marquee">
+        {% if announcements %} 
+        <!-- TEST ASAP -->
+        {% for announcement in announcements %}
+            <li class="marquee"> {{ announcement.desc }}</li>
+        {%  endfor %}
+        {% else %}
+        <div class="card"> No announcements for now, check back later.</div>
+        {% endif %}
+
+    </ul>
+	</font>
+</p>
+</div>
+
+    <!-- <section style="margin-top: 2%">
+        <div id="ios-notice" class="alert alert-info" style="display: none"><p><strong>Notice:</strong> Hello mobile user. Unfortunately, this parallax effect is not reliably achieved on mobile devices, so all you will see on this demo page are static backgrounds.  Please visit this page on a desktop browser to see its full effect.</p></div>
+    </section> -->
+
+
+<div class="parallax-container" data-parallax="scroll" data-speed="0" data-position="top" data-image-src="{% static 'MainSite/img_parallax/football_ground_1077x601.jpg' %}" data-natural-width="1077" data-natural-height="601"></div>
+
+    <div class="hovershadow" style="margin-top: 2em; min-height: 20em">
+    <center>
+          <h1 class="headone" style="padding: 0.5em ">About Us</h1>
+    <img src="{% static 'headers_and_logos/bsa_header.jpg' %}" style="max-width: 75%; width: auto; height: auto;"/>
+    </center>
+    <div style="text-align: center; margin: 2em auto;">
+    <p style="margin-left: 1em; margin-right: 1em"> We turn novices into champions here at IIT Delhi grounds. The best facilities provided by us have led to great results and our presence is now being felt in the Delhi circles as well as in the inter college meets outside. As an organisation we are a group of around 300 people including players, coaches, trainers and administrative staff who are working to take our sporting standards at par with the best in the business. Apart from being the apex body for sports in IITD, we are involved in a number of social events, informal events, hosting of sports tournaments and other collaborations and therefore the number of people involved with BSA is huge.</p>
+    </div>
+    </div>
+
+
+
+<div class="parallax-container" data-parallax="scroll" data-speed="0" data-image-src="{% static 'MainSite/img_parallax/tennis_ground_2298x1316.JPG' %}" data-natural-width="2298" data-natural-height="1316"></div>
+
+    <div class="hovershadow" style="margin-top: 1em; text-align: center; padding-top: 2em; background: url({% static 'background.jpg' %}) repeat-y;">
+    <h1 class="headone" style="display: inline;"> Sports We Play </h1>
+    <div style="min-height: 300px; text-align: center">
+        <div class="wow fadeInRight animated" style="margin: 1em auto">
+            <div class="sports-large">
+                <a href="{% url 'mainsite:aquatics' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Aquatics.png' %}" style="width: 100%"/></a>
+            <div><h5> Aquatics </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:athletics' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Athletics.png' %}" style="width: 100%"/></a>
+            <div><h5> Athletics </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:badminton' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Badminton.png' %}" style="width: 100%"/></a>
+            <div><h5> Badminton </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:basketball' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Basketball.png' %}" style="width: 100%"/></a>
+            <div><h5> Basketball </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:cricket' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Cricket.png' %}" style="width: 100%"/></a>
+            <div><h5> Cricket </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:football' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Football.png' %}" style="width: 100%"/></a>
+            <div><h5> Football </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:hockey' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Hockey.png' %}" style="width: 100%"/></a>
+            <div><h5> Hockey </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:ISC' %}"><img class="zoom_low" src="{% static 'headers_and_logos/ISC.png' %}" style="width: 100%"/></a>
+            <div><h5> ISC </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:lawntennis' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Lawn Tennis.png' %}" style="width: 100%"/></a>
+            <div><h5> Lawn Tennis </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:squash' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Squash.png' %}" style="width: 100%"/></a>
+            <div><h5> Squash </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:tabletennis' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Table Tennis.png' %}" style="width: 100%"/></a>
+            <div><h5> Table Tennis </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:volleyball' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Volleyball.png' %}" style="width: 100%"/></a>
+            <div><h5> Volleyball </h5></div>
+            </div>
+           <div class="sports-large">
+                <a href="{% url 'mainsite:weightlifting' %}"><img class="zoom_low" src="{% static 'headers_and_logos/Weightlifting.png' %}" style="width: 100%"/></a>
+            <div><h5> Weightlifting </h5></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    </div>
+
+<div class="parallax-container" data-parallax="scroll" data-speed="0" data-image-src="{% static 'MainSite/img_parallax/badminton_court_5184x3456.JPG' %}" data-natural-width="5184" data-natural-height="3456"></div>
+
+    <div class="hovershadow container-fluid " style="margin-top: 1em;">
+
+<h1 class="headone" align="center"> Events </h1>
+<!--  
+<div class="rowcustom wow fadeInLeft animated">
+  <div class="column">
+    <div class="hvrbox">
+    <img class="hvrbox-layer_bottom" src="{% static 'grid_images/freshers_week.JPG' %}" style="width:100%">
+    <a href="{% url 'mainsite:freshers' %}">
+    <div class="hvrbox-layer_top hvrbox-layer_slideup">
+    <div class="hvrbox-text">Fresher's Week</div>
+    </div>
+     </a>
+    </div>
+    <div class="hvrbox">
+    <img class="hvrbox-layer_bottom" src="{% static 'grid_images/bsa_orientation.png' %}" style="width:100%">
+    <a href="{% url 'mainsite:orientation' %}">
+    <div class="hvrbox-layer_top hvrbox-layer_slideup">
+    <div class="hvrbox-text">BSA Orientation</div>
+    </div>
+    </a>
+    </div>
+  </div>
+  <div class="column">
+    <div class="hvrbox">
+    <img class="hvrbox-layer_bottom" src="{% static 'grid_images/inter_hostel.jpg' %}" style="width:100%">
+    <a href="{% url 'mainsite:interhostel' %}">
+    <div class="hvrbox-layer_top hvrbox-layer_slideup">
+    <div class="hvrbox-text">Inter Hostel</div>
+    </div>
+    </a>
+    </div>
+    <div class="hvrbox">
+    <img class="hvrbox-layer_bottom" src="{% static 'grid_images/weekenders.jpg' %}" style="width:100%">
+    <a href="{% url 'mainsite:weekenders' %}">
+    <div class="hvrbox-layer_top hvrbox-layer_slideup">
+    <div class="hvrbox-text">Weekenders</div>
+    </div>
+    </a>
+    </div>
+  </div>
+  <div class="column">
+    <div class="hvrbox">
+    <img class="hvrbox-layer_bottom" src="{% static 'grid_images/sportech.JPG' %}" style="width:100%">
+    <a href="{% url 'mainsite:sportech' %}">
+    <div class="hvrbox-layer_top hvrbox-layer_slideup">
+    <div class="hvrbox-text">Sportech</div>
+    </div>
+    </a>
+    </div>
+    <div class="hvrbox">
+    <img class="hvrbox-layer_bottom" src="{% static 'grid_images/leagues.png' %}" style="width:100%">
+    <a href="{% url 'mainsite:leagues' %}">
+    <div class="hvrbox-layer_top hvrbox-layer_slideup">
+    <div class="hvrbox-text">Leagues</div>
+    </div>
+    </a>
+    </div>
+  </div>
+  <div class="column">
+    <div class="hvrbox">
+    <img class="hvrbox-layer_bottom" src="{% static 'grid_images/summer_camp.JPG' %}" style="width:100%">
+    <a href="{% url 'mainsite:summer' %}">
+    <div class="hvrbox-layer_top hvrbox-layer_slideup">
+    <div class="hvrbox-text">Summer Camp</div>
+    </div>
+    </a>
+    </div>
+    <div class="hvrbox">
+    <img class="hvrbox-layer_bottom" src="{% static 'grid_images/bsa_night.JPG' %}" style="width:100%">
+    <a href="{% url 'mainsite:bsanight' %}">
+    <div class="hvrbox-layer_top hvrbox-layer_slideup">
+    <div class="hvrbox-text">BSA Night</div>
+    </div>
+    </a>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+ <div class="container-fluid">
+ -->    
+    <div class="row wow fadeInLeft animated">
+         <a href="{% url 'mainsite:interhostel' %}" style="height: 100%; width: 100%; display: inline-block;">
+       <div class="image-block col-sm-3" style="background: url({% static 'grid_images/inter_hostel.jpg' %}) no-repeat center top;background-size:cover;">
+            <span class="image-overlay">  <span class="text">Inter Hostels </span></span></a>
+        </div>
+        <div class="image-block col-sm-4" style="background: url({% static 'grid_images/bsa_orientation.png' %}) no-repeat center top;background-size:cover;">
+             <a href="{% url 'mainsite:orientation' %}" style="height: 100%; width: 100%; display: inline-block;">
+            <span class="image-overlay"><span class="text">BSA Orientation </span></span></a>
+        </div>
+        <div class="image-block col-sm-5" style="background: url({% static 'grid_images/bsa_night.JPG' %}) no-repeat center top;background-size:cover;"><a href="{% url 'mainsite:bsanight' %}" style="height: 100%; width: 100%; display: inline-block;">
+            <span class="image-overlay"> <span class="text">BSA Night </span></span></a>
+        </div>
+         <div class="image-block col-sm-4" style="background: url({% static 'grid_images/freshers_week.JPG' %}) no-repeat center top;background-size:cover;"><a href="{% url 'mainsite:freshers' %}" style="height: 100%; width: 100%; display: inline-block;">
+            <span class="image-overlay"> <span class="text">Freshers' Week </span></span></a>
+        </div>
+        
+        <div class="image-block col-sm-4" style="background: url({% static 'grid_images/weekenders.jpg' %}) no-repeat center top;background-size:cover;"><a href="{% url 'mainsite:weekenders' %}" style="height: 100%; width: 100%; display: inline-block;">
+            <span class="image-overlay"> <span class="text">Weekenders </span></span></a>
+        </div>
+        <div class="image-block col-sm-4" style="background: url({% static 'grid_images/summer_camp.JPG' %}) no-repeat center top;background-size:cover;"><a href="{% url 'mainsite:summer' %}" style="height: 100%; width: 100%; display: inline-block;">
+            <span class="image-overlay"> <span class="text">Summer Camp </span></span></a>            
+        </div>
+        <div class="image-block col-sm-7" style="background: url({% static 'grid_images/leagues.png' %}) no-repeat center top;background-size:cover;"><a href="{% url 'mainsite:leagues' %}" style="height: 100%; width: 100%; display: inline-block;">
+            <span class="image-overlay"> <span class="text">Leagues </span></span></a>
+        </div>
+        
+        <div class="image-block col-sm-5" style="background: url({% static 'grid_images/sportech.JPG' %}) no-repeat center top;background-size:cover;"><a href="{% url 'mainsite:sportech' %}" style="height: 100%; width: 100%; display: inline-block;">
+            <span class="image-overlay"> <span class="text">Sportech </span></span></a>
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+
+<div class="parallax-container" data-parallax="scroll" data-speed="0" data-image-src="{% static 'MainSite/img_parallax/basketball_ground_5184x3456.jpg' %}" data-natural-width="5184" data-natural-height="3456"></div>
+
+    <div class="hovershadow" style="margin-top: 2em;  padding: 2em;text-align: center;">
+        <h1 class="headone" style=" padding-bottom: 0.5em;">Inter IIT</h1>
+    <center>
+    <img src="{% static 'headers_and_logos/inter_iit.jpg' %}" class="col-lg-11 align-self-center"  />
+    <div class= "col-lg-11" style="margin: 1em auto;">
+    <p> Passion meets purpose at the Annual Inter-IIT Sports Meet, which is the grandest stage to showcase your sporting talents.
+        The pride of representing the institute at such a stage is beyond words, it’s a mix of a extravagant experiences and emotions.
+        Hosted jointly by IIT Kharagpur and IIT Bhubaneswar this year, 14-22 December, and the Aquatics meet being hosted from 1-4 October.
+        Why is it so important this year? IIT Delhi grabbed the first position in Overall General Championship in the Inter IIT Sports Meet 2018 in Guwahati, and we hope to hold back first position this December.
+        The contingent is determined and practicing hard to bring home the general championship back this year.</p>
+    </div>
+	<img src="{% static 'headers_and_logos/main_page_anim.gif' %}" class="col-lg-11 align-self-center"  />
+    </center>
+</div>
+
+<div class="parallax-container" data-parallax="scroll" data-speed="0" data-position="top" data-image-src="{% static 'MainSite/img_parallax/football_ground_1077x601.jpg' %}" data-natural-width="1077" data-natural-height="601"></div>
+
+</div>
+
+    <script type="text/javascript">jssor_1_slider_init();</script>
+    <script type="text/javascript">
+    $(function(){
+        if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+          $('#ios-notice').style.display = "block";
+          $('.parallax-container').height( $(window).height() * 0.5 | 0 );
+        } else {
+          $(window).resize(function(){
+            var parallaxHeight = Math.max($(window).height() * 0.7, 200) | 0;
+            $('.parallax-container').height(parallaxHeight);
+          }).trigger('resize');
+        }
+      });
+    </script>
+
+    <script>
+    $("#loading").show().delay(3000).queue(function(n) {
+    $(this).hide()  ;
+    });
+
+    </script>
+{% endblock body %}

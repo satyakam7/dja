@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+
+        table, th, td {
+            border: 1px solid black;
+            font-size: 20px;
+            font-family: Roboto;
+            padding:10px;
+            margin-bottom:25px;
+        }
+
+        form {
+            margin : 5px;
+        }
+                
+
+ 
+</style>
+
+<div class='div'>
+
+                <h3 style="text-align:center" ><a href="{% url 'mainsite:swimming_admin_responses' %}">Back</a></h3>
+
+                
+            
+                {%if relatives%}
+                    {%if unverifiedCount == 0 %}
+                    <h4>All relatives requests received on this date have been verified</h4>
+                    {%else%}
+                    <h4>Total {{unverifiedCount}} relative requests(s) here are not verified yet</h4>
+                    {%endif%}
+
+                    <table style="width:100%">
+                    <tr>
+                    <th>EMAIL</th>
+                    <th>RELATIVES's NAME</th>
+                    <th>RELATION</th>
+                    <th>FORM</th>
+                    <th>APPROVED STATUS</th>
+                    <th>ACTIONS</th>
+                    </tr>
+                    {%for elm in relatives %}
+                    <tr> 
+                        <td>{{elm.email}} </td>
+                        <td>{{elm.relativeName}} </td>
+                        <td>{{elm.relation}} </td>
+                        <td><a href='{{elm.image.url}}' download> Download </a> /
+                        <a href='{{elm.image.url}}'> View </a></td>
+                        <td>{% if elm.approvedStatus %} Approved {% elif elm.disapprovedStatus %} Disapproved {%else%} Not Verified Yet {%endif%}</td>
+                        <td>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden"  name="step" value='2'>
+                                <input type="hidden"  name="email" value={{elm.email}}>
+                                <input type="hidden"  name="relativeName" value={{elm.relativeName}}>
+                                <input type="hidden"  name="relativeCode" value={{elm.relativeCode}}>
+                                <input type="hidden"  name="action" value='approve'>
+
+                                
+                                <button type="submit">Approve</button>
+                            </form>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden"  name="step" value='2'>
+                                <input type="hidden"  name="email" value={{elm.email}}>
+                                <input type="hidden"  name="relativeName" value={{elm.relativeName}}>
+                                <input type="hidden"  name="relativeCode" value={{elm.relativeCode}}>
+                                <input type="hidden"  name="action" value='disapprove'>
+                                
+                                <button type="submit">Disapprove</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {%endfor%} 
+                {%else%}
+                <div style="text-align: center;width:100%;">
+                    <p>No relatives requests uploaded on this date</p>
+                </div>
+                {%endif%}
+              </table>
+
+</div>
+
+{% endblock body %}
+
+
+    

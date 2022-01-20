@@ -1,0 +1,17 @@
+
+.parallax-container {
+  height: 500px;
+  width: 100%;
+
+}
+
+.hidden {
+  display: none !important;
+}
+@media (max-width: 768px){
+  .parallax-container{
+    height: 0 !important;
+  }
+}
+
+

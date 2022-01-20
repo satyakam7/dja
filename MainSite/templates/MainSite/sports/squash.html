@@ -1,0 +1,80 @@
+{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+<img src="{% static 'headers_and_logos/SQUASH.jpg' %}" class="content" />
+
+<div class="infocard">
+
+    <div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+<h4 style="margin-top: 0.5em; text-align: center">Boys</h4>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>Spardha</td> <td>2019</td> </tr>
+				<tr> <td>Gold</td> <td>Sangram, BOSM</td> <td>2018</td> </tr>     
+				<tr> <td>Bronze</td> <td>52nd interiit</td> <td>2017</td> </tr>         
+				<tr> <td>4th</td> <td>53rd, 54th interiit</td> <td>2018,2019</td> </tr>   
+		</table>
+		
+<h4 style="margin-top: 0.5em; text-align: center">Girls</h4>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Silver</td> <td>54th interiit</td> <td>2019</td> </tr>
+				<tr> <td>2nd,4th</td> <td>Triquetra IIIT Delhi</td> <td>2019</td> </tr>     
+				<tr> <td>Bronze</td> <td>Udghosh'19</td> <td>2019</td> </tr>         
+		</table>
+
+<p style="margin-top: 1em; margin-bottom: 1em;">We welcome you to the BSA squash page. Feel free to contact us regarding any queries you might have related to squash.<br/>
+<br/>
+    For all the latest updates, follow our facebook page -</br> <a href="https://www.facebook.com/iitdsquash/?ref=bookmarks">facebook.com/iitdsquash</a><br/>
+<br/>
+    Rule to the IITD Squash Ladder -</br> <a href="https://drive.google.com/file/d/0B2CmVjxMeHO8dDVqRVpVQTNzakk/view">IITD Squash Ladder</a><br/>
+<br/>
+    To get yourself registered to the ladder, send us a message on our FB page.<br/></p>
+<img class="img-responsive" style="max-width: 48%; margin: auto; align: left" src="{% static 'sports/squash/17264250_890384044436554_8033115544457798950_n.jpg' %}">
+<img class="img-responsive" style="max-width: 48%; margin: auto; align: right" src="{% static 'sports/squash/007.JPG' %}">
+<img class="img-responsive" style="max-width: 48%; margin: auto; align: right" src="{% static 'sports/squash/squash_women.jpeg' %}">
+<p>Till then, Happy Squashing!</p>
+
+</div>
+{% endblock body %}

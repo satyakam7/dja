@@ -1,0 +1,84 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin-left: 2% !important;
+    text-align: center;
+    display: inline-block !important;
+    padding: 2%;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.custom1 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.customa {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    display: inline !important;
+    margin: 2%;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+.list-group-horizontal .list-group-item {
+    display: inline-block !important;
+}
+.list-group-horizontal .list-group-item {
+	margin-bottom: 0;
+	margin-left:-4px;
+	margin-right: 0;
+}
+.list-group-horizontal .list-group-item:first-child {
+	border-top-right-radius:0;
+	border-bottom-left-radius:4px;
+}
+.list-group-horizontal .list-group-item:last-child {
+	border-top-right-radius:4px;
+	border-bottom-left-radius:0;
+}
+
+/* Tooltip container */
+.tooltipw3 {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltipw3 .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipw3:hover .tooltiptext {
+    visibility: visible;
+}

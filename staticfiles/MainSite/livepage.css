@@ -1,0 +1,13 @@
+.infocard {
+    width: 95%;
+    text-align: center;
+  background: #e2e1e0;
+  border-radius: 2px;
+  display: inline-block;
+  margin-top: 2em;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: 1em;
+  position: relative;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}

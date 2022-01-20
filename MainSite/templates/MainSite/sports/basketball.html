@@ -1,0 +1,93 @@
+{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+
+<img src="{% static 'headers_and_logos/BASKETBALL.jpg' %}" class="content" />
+
+<div class="infocard">
+
+<div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+<h4 style="margin-top: 0.5em; text-align: center">Boys</h4>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>53rd,54th interiit</td> <td>2018,2019</td> </tr>
+				<tr> <td>Silver</td> <td>Sportech,Spardha</td> <td>2019</td> </tr>          
+		</table>
+<h4 style="margin-top: 0.5em; text-align: center">Girls</h4>
+		<table class="center" style="width:90%; align: center; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>Spardha</td> <td>2019</td> </tr>
+				<tr> <td>Silver</td> <td>53rd interiit</td> <td>2018</td> </tr>     
+				<tr> <td>Silver</td> <td>Sportech</td> <td>2018,2019</td> </tr>           
+		</table>
+		
+<!-- <p style="margin-top: 1em; margin-bottom: 1em;">Boy's History:<br/>
+InterIIT 2013 - 2nd position <br/>
+InterIIT-Sportech, 2016 - 3rd position<br/>
+Sportech, 2017 - 1st position<br/>
+<br/>
+Girl's History:<br/>
+InterIIT 2014, IIT Bombay - 2nd position<br/>
+InterIIT 2016, IIT Kanpur - 4th position<br/>
+InterIIT-Sportech, 2016 - 1st position<br/>
+Sportech, 2017 - 3rd position<br/>
+Gadius 2017, AIIMS - 1st position
+</p> -->
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/basketball/bb1.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/basketball/bb5.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">Facilities:<br/>We have separate courts for the practice for the men's and women's team. You can find basketballs at your hostel reception. If not, feel free to contact the captain or the vice captain. You will be able to find the team practicing every evening at the court.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/basketball/IMG_4381-2.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/basketball/bb3.JPG' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">General:<br/>We are a family of diverse individuals united by our passion for the game. We urge you all to come and join us and we promise to take you on a fun filled journey of uncountable match experiences, team rivalries, tough practices, dinner treats (we have good seniors :P) and memories that you will cherish for a lifetime.
+</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/basketball/bb2.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/basketball/bb4.jpg' %}" />
+</div>
+</div>
+{% endblock body %}

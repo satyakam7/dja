@@ -1,0 +1,52 @@
+{% extends 'events.html' %}
+{% load static %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'MainSite/swfrom.css' %}">
+
+
+
+    <div class="testbox">
+      <form action="" method="POST" enctype = 'multipart/form-data'>
+	  
+		{% csrf_token %}
+		
+		<div style = "color: red;">
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+	  
+        <h1>VERIFY EMAIL</h1>
+        <div class="item">
+
+				<div >
+                  <label for="VerificationCode">A verification code has been sent to your email</label>
+                  <input type="hidden"  name="email" value={{email}}>
+                  <input class="name" type="text" name="firstName" placeholder="First name" required>
+                  <input class="name" type="text" name="lastName" placeholder="Last name" required>
+                  <label for="Form_Image">Scanned copy of Form (Max size 40kb)</label>
+                  <input type="file" name="form" onchange="ValidateSize2(this)" required>
+				  <input type="text" name="verificationCode" placeholder="Enter Verification Code">
+				</div>  
+        </div>
+		
+        <div class="btn-block">
+          <button type="submit">VERIFY</button>
+        </div>
+      </form>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="{% static 'MainSite/swform.js' %}"></script>
+
+
+{% endblock body %}

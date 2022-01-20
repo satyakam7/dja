@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block privatestyles %}
+    <link rel="stylesheet" href="{% static 'MainSite/people_card.css' %}"  type="text/css">
+
+{% endblock privatestyles %}
+{%  block privatejs %}
+	<script src="{% static "MainSite/js/jquery.tabslet.min.js" %}" type="text/javascript"></script>
+{%  endblock privatejs %}
+
+{% block body %}
+
+<div class='tabs' data-toggle="tabslet" style="margin-top: 1%">
+	<ul class="container list-group-horizontal">
+		<li style="display: inline;font-size:15px"><a href="#tab-1" class="list-group-item">Inter-IIT Best Player</a></li>
+	</ul>
+	<div id='tab-1' class="container" style="text-align: center">
+        <h3> INTER-IIT BEST PLAYER </h3>
+        {% for person in InterIITBestPlayer %}
+        <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <p class="title">{{ person.team }}</p>
+        <p>{{ person.year }}</p>
+		</div>
+	 {% endfor %}
+    
+	</div>
+
+</div>
+
+
+
+{% endblock body %}

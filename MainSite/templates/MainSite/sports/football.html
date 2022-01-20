@@ -1,0 +1,76 @@
+{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+
+<img src="{% static 'headers_and_logos/FOOTBALL.jpg' %}" class="content" />
+
+<div class="infocard">
+
+    <div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>53rd interiit</td> <td>2018</td> </tr>
+				<tr> <td>Gold</td> <td>Sportech</td> <td>2018</td> </tr>     
+				<tr> <td>Bronze</td> <td>Udghosh</td> <td>2017</td> </tr>            
+		</table>
+
+<p style="margin-top: 1em; margin-bottom: 1em;">The Football team of IIT Delhi has been one of the strongest college football teams for n number of years. The football ground, facing the IIT Delhi hospital, is the home to the team. It is a fully equipped ground with the apt dimensions and a facility of six floodlights shining upon it, a rare feat at this level.</p>
+<img class="img-responsive" style="max-width: 90%; margin: auto" src="{% static 'sports/football/Screenshot_20151116-032518 (1).jpg' %}" />
+<p style="margin-top: 1em; margin-bottom: 1em;">The IIT Delhi Football Team takes part in a melange of tournaments throughout the year, thus giving ample opportunities to the newbies to become future stalwarts.
+<!--The 51st Inter IIT meet, IIT Kanpur<br/>
+Spirit, the sports fest of IIT Guwahati<br/>
+Reliance Foundation for Youth Sports, New Delhi<br/>
+Sportech , sports fest of IIT Delhi<br/>
+The Triquetra, organised by NSIT -->
+</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/football/17358998_338163446581483_989631887147160615_o.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/football/18156355_358168104581017_4176885843930151738_o.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">Also, through concerted efforts of the team players, a Football League ,named the IIT Delhi Football League, was organised. The main aim of this was to attract non team players to get more playing time and even, for some, to come into the limelight. Football trials and the consequent auctions made an even distribution of the players to maximize their playing time. This tournament proved a success, inviting much needed focus and support to the game at IIT Delhi.</p>
+<img class="img-responsive" style="max-width: 90%; margin: auto" src="{% static 'sports/football/1.jpg' %}" />
+<p style="margin-top: 1em; margin-bottom: 1em;">Timings:<br/>
+Weekdays: Grounds are open till 9pm. Floodlights will be shut after 9pm. The institute football team reserves the right to use the main football ground after 6:30pm.<br/>
+Weekends: Floodlights will not be switched on. Ground can be accessed till 9pm.<br/>
+    <br/>
+    Link to Facebook page: <a href="https://www.facebook.com/football.iitd/">https://www.facebook.com/football.iitd/</a>
+</p>
+</div>
+{% endblock body %}

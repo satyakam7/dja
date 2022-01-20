@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block privatestyles %}
+<link  href="https://unpkg.com/nanogallery2@2.2.0/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+<link href="{% static 'MainSite/navbar-side.css' %}" rel="stylesheet">
+{% endblock privatestyles %}
+{% block privatejs %}
+<script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.2.0/dist/jquery.nanogallery2.min.js"></script>
+{% endblock privatejs %}
+{% block body %}
+
+    <!-- <div class="dropdown" style="text-align: center; margin-top: 2em;">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Navigate to an event
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+    <li class="nav-item"><a class="nav-link" style="color: black;" href="#showcase">Showcase</a></li>
+    {% for event in all_event_images %}
+   <li class="nav-item"><a class="nav-link" style="color: black;" href="#{{ event.event_name }}">{{ event.event_name }}</a></li>
+    {% endfor %}
+    </ul>
+    </div>
+	-->
+<div class="infocard">
+	<p style="margin-top: 1em; margin-bottom: 1em; text-align: center;">Inter-IIT Sports Meet Photos collection <br/> 
+	<a href="https://photos.app.goo.gl/pWMg2GTmjX78nSwv8">Inter IIT 2018</a><br/>
+	<a href="https://drive.google.com/folderview?id=1H2LD4wCb1Y5pDvDR67QX3MhULN71-7e5">Inter IIT 2019_1</a><br/>
+	<a href="https://drive.google.com/folderview?id=1lLSLvldkyRisC8yElXHxaSEQYffDAWZJ">Inter IIT 2019_2</a>
+	</p>
+</div>
+<div class="main">	
+    <!-- <div id="showcase" class="container event">
+        <h3> SHOWCASE </h3>
+        <div id="nanogallery2" data-nanogallery2 = '{
+                        "thumbnailHeight":  150,
+                        "thumbnailWidth":   "150",
+                        "galleryDisplayMoreStep":   2,
+                        "galleryDisplayMode":   "moreButton",
+						"thumbnailDisplayTransition": "slideLeft",
+                        "itemsBaseURL":     "{% static showcase.base_dir %}/"
+                      }' >
+
+                  {% for name in showcase.images %}
+                  <a href = "{{ name }}">Showcase {{ name }}</a>
+                  {% endfor %}
+        </div>
+    </div> -->
+
+    <!--{% for event in all_event_images %}
+	<div id='{{ event.event_name }}' class="container event">
+        <h3> {{ event.event_name }} </h3>
+        <div id="nanogallery2 {{ event.event_name }}" data-nanogallery2 = '{
+                        "thumbnailHeight":  150,
+                        "thumbnailWidth":   "auto",
+                        "galleryDisplayMoreStep":   2,
+                        "galleryDisplayMode":   "moreButton",
+						"thumbnailDisplayTransition":   "slideLeft",
+                        "itemsBaseURL": "{% static event.base_dir %}/"
+                      }' >
+
+                  <!-- gallery content --
+                  {% for name in event.images %}
+                  <a href = "{{ name }}">{{ event.event_name }} {{ name }}</a>
+                  {% endfor %}
+        </div>
+    </div>
+    {% endfor %} -->
+
+</div>
+
+{% endblock body %}

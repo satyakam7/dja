@@ -1,0 +1,86 @@
+{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+
+<img src="{% static 'headers_and_logos/WL.jpg' %}" class="content" />
+
+<div class="infocard">
+
+    <div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Silver</td> <td>Sportech</td> <td>2019</td> </tr> 
+		</table>
+
+<p style="margin-top: 1em; margin-bottom: 1em;">Weightlifting event has two competition lifts in order are the 'snatch' and the 'clean and jerk'. Each weightlifter receives three attempts in each, and the combined total of the highest two successful lifts determines the overall result within a bodyweight category.  Weightlifting at Inter IIT organises its event in 5 weight categories.<br/>
+
+                      These body weight categories are:<br/>
+                      1) Up to 56 kg <br/>
+                      2) 56 kg - 62 kg<br/>
+                      3) 62 kg - 69 kg<br/>
+                      4) 69 kg - 77 kg<br/>
+                      5) Above 77 kg
+</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/weightlifting/IMG_5056.JPG' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/weightlifting/2015team.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">With an aim to clinch the Inter-Hostel title or to bring glory to the institute in Inter-IITs, many weightlifters can be seen slogging it out in the SAC weightlifting room daily. The various events are held under different categories by weight and the standard rules are followed. All the required equipments are available in SAC itself. Apart from this, each hostel has its own facilities for this sport which is gaining popularity among the IIT-D students. It is the result of these facilities and the effort of our national level coach, Mr. S.K. Bakshi that we've had performed very well at past Inter IITs . So the next time you think that an IITian is all brains and no brawn, think twice. </p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/weightlifting/oldteam.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/weightlifting/IMG_20170531_015121.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">Our current  team members are Sumit, Ankesh, Amit, Mukul, Naitik, Pankaj, sunil .We are currently looking for good players and we highly welcome all enthusiastic newbies to come and join our team to make it the best team among all IITs.<br/>
+Competitions:  Participation in events like Inter IIT sports meet , Sportech (IIT Delhi sports fest) , Udghosh (IIT kanpur), Spardha (IIT BHU)
+</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/weightlifting/kamalsir.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/weightlifting/weightliftingteam.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">Pre-requisite: To join the team,all we need is your fitness and dedication towards lifting.we don't demand any prior background of weightlifting.<br/>
+What we organise: we organise the weightlifting event in 'sportech' every year at IIT delhi<br/>
+Our EX-Stars: Karthik mattu (gold medal ,69 kg cat., Inter IIT guwahati 2013, Kamal kumar( silver medal, 69kg cat., Inter IIT bombay, 2014) ,Raju gollapalli and other gold medalist like Rahul Prakash and Kenisevi Meyase, and many more...<br/>
+<br/>
+1. Daily Venue :  Students activity centre (SAC) ,IIT D<br/>
+2. Practice time : Monday to Saturday from 6:30 to 8:30 pm<br/>
+<br/>
+    Weightlifting Facebook page:  <a href="https://www.facebook.com/pg/weightliftingiitd/photos/?ref=page_internal">facebook.com/wieghtliftingiitd</a></p>
+</div>
+{% endblock body %}

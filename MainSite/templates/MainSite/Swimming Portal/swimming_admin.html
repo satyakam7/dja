@@ -1,0 +1,21 @@
+{% extends 'events.html' %}
+{% load static %}
+{% block body %}
+
+{% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+{% endif %}
+<form action="" method="POST" enctype = 'multipart/form-data'>
+    {%csrf_token%}
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <input type="submit" value="Submit" />
+
+</form>
+
+{% endblock body %}

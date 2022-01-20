@@ -1,0 +1,264 @@
+﻿{% load static %}
+<!DOCTYPE HTML>
+<html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}Board for Sports Activities - IIT Delhi{% endblock title %}</title>
+
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'MainSite/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/bootstrap-theme.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/theme.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/footer.css' %}" />
+	<link rel="stylesheet" href="{% static 'MainSite/logo.css' %}" type="text/css"/>
+
+{% comment %} <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet"> {% endcomment %}
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+        {% block privatess %}
+        {% endblock privatess %}
+        
+        {% block privatestyles %}
+        {% endblock privatestyles %}
+    {% endblock stylesheets %}
+
+</head>
+{% block scriptload %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="{% static 'MainSite/js/tooltip.js' %}"></script>
+        {% block privatejs %}
+        {% endblock privatejs %}
+
+
+
+
+{% endblock scriptload %}
+
+<body class="mainbody" role="document" style="background-color:#115588">
+
+
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark hidden-xs" style="z-index: 999">
+    <a href="{% url 'mainsite:index' %}" class="navbar-brand"><img src="{% static 'headers_and_logos/bsa_logo.png' %}" alt="BSA" class="logo_image"><h2 class="logo_text"> BSA</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'mainsite:people' %}">People</a>
+      </li>
+	<li class="nav-item">
+          <a class="nav-link" href="{% url 'mainsite:hof' %}">Hall Of Fame</a>
+      </li>
+        <li class="dropdown nav-item">
+            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">Events<span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+				<li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:fantasyLeagueHome' %}">Fantasy League</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:timeline' %}">Timeline</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:freshers' %}">Fresher's Week</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:orientation' %}">Orientation</a></li>
+				<li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:interiit' %}">Inter-IIT</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:interhostel' %}">Inter-Hostel</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:weekenders' %}">Weekenders</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:sportech' %}">Sportech</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:leagues' %}">Leagues</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:summer' %}">Summer Camp</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:bsanight' %}">BSA Night</a></li>
+
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'mainsite:live' %}">LIVE</a>
+        </li>
+		<li class="dropdown nav-item">
+            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">More<span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+				        <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:magazine' %}">BSA Magazine</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:coachFeedbackForm' %}">Coach Feedback</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:reimbursementForm' %}">Reimbursement Form</a></li>
+		<li class="nav-item"><a class="nav-link" style="color: #1b1e21" href="{% url 'mainsite:yearbookLogin' %}">BSA Yearbook</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'mainsite:contactUs' %}">Contact Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://medium.com/board-for-sports-activites-bsa-iit-delhi">Blog</a>
+        
+		</li>
+		
+		{% comment %} <li class="nav-item">
+            <a class="nav-link" href="{% url 'mainsite:swimming_steps' %}">Portal</a>
+        </li>  {% endcomment %}
+
+    </ul>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-md navbar-light" style="z-index: 500; background-color: #115588;">
+  <div class="collapse navbar-collapse" id="collapsibleNavbar2">
+    <ul class="navbar-nav nav-center">
+      <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Aquatics" href="{% url 'mainsite:aquatics' %}"><img class="zoom" src="{% static 'headers_and_logos/Aquatics.png' %}" > </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Athletics"href="{% url 'mainsite:athletics' %}"><img class="zoom" src="{% static 'headers_and_logos/Athletics.png' %}" > </a>
+      </li>
+       <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Badminton" href="{% url 'mainsite:badminton' %}"><img class="zoom" src="{% static 'headers_and_logos/Badminton.png' %}" > </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Basketball" href="{% url 'mainsite:basketball' %}"><img class="zoom" src="{% static 'headers_and_logos/Basketball.png' %}" ></a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Cricket" href="{% url 'mainsite:cricket' %}"><img class="zoom" src="{% static 'headers_and_logos/Cricket.png' %}" > </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Football" href="{% url 'mainsite:football' %}"><img class="zoom" src="{% static 'headers_and_logos/Football.png' %}" > </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Hockey" href="{% url 'mainsite:hockey' %}"><img class="zoom" src="{% static 'headers_and_logos/Hockey.png' %}"> </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Indoor Sports" href="{% url 'mainsite:ISC' %}"><img class="zoom" src="{% static 'headers_and_logos/ISC.png' %}" > </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Lawn Tennis" href="{% url 'mainsite:lawntennis' %}"><img class="zoom" src="{% static 'headers_and_logos/Lawn Tennis.png' %}" > </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Squash" href="{% url 'mainsite:squash' %}"><img class="zoom" src="{% static 'headers_and_logos/Squash.png' %}" > </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Table Tennis" href="{% url 'mainsite:tabletennis' %}"><img class="zoom" src="{% static 'headers_and_logos/Table Tennis.png' %}" > </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Volleyball" href="{% url 'mainsite:volleyball' %}"><img class="zoom" src="{% static 'headers_and_logos/Volleyball.png' %}" > </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link sport-logo" data-toggle="tooltip" title="Weightlifting" href="{% url 'mainsite:weightlifting' %}"><img class="zoom" src="{% static 'headers_and_logos/Weightlifting.png' %}" > </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+ {% comment %} 
+    {% if messages %}
+<div class="container">
+    <ul class="messages">
+    {% for message in messages %}
+    <li id="message_{{ forloop.counter }}"
+        {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>
+        {{message}}
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+ {% endcomment %} 
+
+
+    {% block body %}
+    {% endblock body %}
+
+
+<hr>
+<div style="background-color: pink;">
+{% block footer %}
+<footer class="footer-distributed">
+            <div class="footer-center">
+				<div>
+					<i class="fa fa-star footer-icons"></i>
+					<p>Himanshu Thakur<span>General Secretary, BSA</span> </p>
+				</div>
+                <div>
+					<i class="fa fa-star footer-icons"></i>
+					<p>Amit Dubey<span>Deputy General Secretary, BSA</span> </p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope footer-icons"></i>
+					<p><span><a href="mailto:bsagsec@iitd.ac.in">bsagsec@iitd.ac.in</a></span><!--<span><a href="mailto:Deputy.General.Secretary.Bsa@admin.iitd.ac.in">Deputy.General.Secretary.Bsa@admin.iitd.ac.in</a></span>--></p>
+				</div>
+
+			</div>
+
+			<div class="footer-left">
+
+				<h3>Board for <span>Sports Activities</span></h3>
+
+{% comment %} 
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">Blog</a>
+					·
+					<a href="#">Pricing</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="#">Contact</a>
+				</p> {% endcomment %}
+
+				{% comment %} <p class="footer-company-name">Company Name &copy; 2015</p> {% endcomment %}
+			</div>
+
+			
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>Contact Us</span>
+                    Drop us an email on the links to the left.<br>
+					We can be also found on Facebook and Instagram. 
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="https://www.facebook.com/iitd.bsa/?ref=aymt_homepage_panel" style="font-size: xx-large"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.instagram.com/bsa.iitd/" style="font-size: xx-large"><i class="fa fa-instagram"></i></a>
+
+				</div>
+
+			</div>
+			<div class="acks" style="color:#777777; text-align:center; font-size: 0.6em; "> Maintained by BSA Website Team</span></div>
+            <div class="acks" style="color:#777777; text-align:center; font-size: 0.5em;><span "> Designed and Developed by <a href="https://github.com/ShouryaAggarwal/" style="color:#909090">Shourya Aggarwal</a> and <a href="https://github.com/KabirTomer/" style="color:#909090">Kabir Tomer</a></span></div>
+
+		</footer>
+{% comment %} <div class="container marketing">
+<footer>
+    <div>
+    <h2 align="center"> Contact us </h2>
+    <div style="display: inline-block; float: left">
+    <p align="left">Himanshu Thakur<br/>General Secretory, BSA<br/><a href="mailto:bsagsec@iitd.ac.in"><i class="fa fa-envelope"></i></a></p>
+    </div>
+        <div style="display: inline-block; float: right">
+        <p align="right">Amit Dubey<br/>Deputy General Secretory, BSA<br/><a href="mailto:Deputy.General.Secretary.Bsa@admin.iitd.ac.in"><i class="fa fa-envelope"></i></a></p>
+        </div>
+    <p align="center" style="margin-top: 2em">
+    <a href="https://www.facebook.com/iitd.bsa/?ref=aymt_homepage_panel"><i class="fa fa-facebook" style="font-size: xx-large"></i></a>
+    &ensp;
+    <a href="https://www.instagram.com/bsa.iitd/"><i class="fa fa-instagram" style="font-size: xx-large"></i></a>
+    </p>
+    </div>
+    <div style="margin-top: 2em">
+    <p class="pull-right"><a href="#">Back to Top</a></p>
+    </div>
+</footer> {% endcomment %}
+</div>
+{% endblock footer %}
+</div>
+</body>
+</html>
+

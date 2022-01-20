@@ -1,0 +1,82 @@
+﻿{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+
+<img src="{% static 'headers_and_logos/TENNIS.jpg' %}" class="content" />
+
+<div class="infocard">
+
+    <div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+<h4 style="margin-top: 0.5em; text-align: center">Boys</h4>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>Sportech</td> <td>2018</td> </tr>
+				<tr> <td>Silver</td> <td>Sportech,Spardha</td> <td>2017,2019</td> </tr>     
+				<tr> <td>Bronze</td> <td>52nd interiit</td> <td>2017</td> </tr>           
+		</table>
+<h4 style="margin-top: 0.5em; text-align: center">Girls</h4>
+		<table class="center" style="width:90%; align: center; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Silver</td> <td>Udghosh</td> <td>2017</td> </tr>    
+				<tr> <td>Bronze</td> <td>52nd interiit</td> <td>2017</td> </tr>           
+		</table>
+		
+<p style="margin-top: 1em; margin-bottom: 1em;">IIT Delhi is proud to have 8 well maintained, floodlight courts: 4 hard courts and 4 clay courts.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/lawntennis/DSC_0010.JPG' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/lawntennis/DSC_0016.JPG' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">The IIT Delhi Tennis ladder consists of 7 best players of the institute. Every fortnight matches are played amongst these players to determine the rankings. This makes the sport more competitive and always keeps players on their toes. The top four players of this ladder represent the college at tournaments. Come out and slowly climb your way up the top of the institute!</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/lawntennis/6.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/lawntennis/FB_IMG_1488201119456.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">Court Timings:<br/>
+Weekdays: 11am - 4pm | 6pm - 9pm<br/>
+Weekends: 11am - 4pm | 6pm - 9pm<br/>
+<br/>
+However, at any point of time 2 synthetic courts are reserved for the institute team. The Captain and Vice-captain of the institute are authorised to use the courts for the team’s practice at their disposal.
+</p>
+</div>
+{% endblock body %}

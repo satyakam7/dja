@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+
+        table, th, td {
+            border: 1px solid black;
+            font-size: 20px;
+            font-family: Roboto;
+            padding:10px;
+            margin-bottom:25px;
+        }
+
+        form {
+            margin : 5px;
+        }
+                
+
+ 
+</style>
+
+<div class='div'>
+
+            <h3 style="text-align:center" ><a href="{% url 'mainsite:render_pdf_view_AM67' %}">Get Today's 6:00 to 7:00 AM Responses</a></h3>
+            <h3 style="text-align:center" ><a href="{% url 'mainsite:render_pdf_view_AM78' %}">Get Today's 7:00 to 8:00 AM Responses</a></h3>
+            <h3 style="text-align:center" ><a href="{% url 'mainsite:render_pdf_view_AM89' %}">Get Today's 8:00 to 9:00 AM Responses</a></h3>
+            <h3 style="text-align:center" ><a href="{% url 'mainsite:render_pdf_view_PM56' %}">Get Today's 5:00 to 6:00 PM Responses</a></h3>
+            <h3 style="text-align:center" ><a href="{% url 'mainsite:render_pdf_view_PM67' %}">Get Today's 6:00 to 7:00 PM Responses</a></h3>
+            <h3 style="text-align:center" ><a href="{% url 'mainsite:render_pdf_view_PM78' %}">Get Today's 7:00 to 8:00 PM Responses</a></h3>
+            <h3 style="text-align:center" ><a href="{% url 'mainsite:render_pdf_view_all' %}">Get Upcoming Responses (3 days)</a></h3>
+
+
+            <h3 style="text-align:center" ><a href="{% url 'mainsite:swimming_admin_logout' %}">LOG OUT</a></h3>
+        
+
+            {% comment %} <h5 style="text-align:center" ><a href="{% url 'mainsite:export' %}">Export all slots</a></h5> {% endcomment %}
+
+            <hr>
+            <hr>
+            <div style="text-align: center;width:100%;">
+
+            {%if unverifiedCount == 0 %}
+            <h4>All received forms have been verified</h4>
+            {%else%}
+            <h4>Total {{unverifiedCount}} form(s) are not verified yet</h4>
+            {%endif%}
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="get_forms">Get Forms Submitted On :</label>
+                <input type="date" name="forms_on_date" value = {{today2}} required>
+                <input type="hidden"  name="requestType" value="form">
+                <button type="submit">SUBMIT</button>
+            </form>
+            </div>
+            <div style='width:100%'>
+
+
+            <hr>
+            <hr>
+            <div style="text-align: center;width:100%;">
+
+            {%if unverifiedCountRelatives == 0 %}
+            <h4>All relative requests have been verified</h4>
+            {%else%}
+            <h4>Total {{unverifiedCountRelatives}} relative request(s) are not verified yet</h4>
+            {%endif%}
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="get_forms">Get Relatives Requests Submitted On :</label>
+                <input type="date" name="relatives_on_date" value = {{today2}} required>
+                <input type="hidden"  name="requestType" value="relative">
+                <button type="submit">SUBMIT</button>
+            </form>
+            </div>
+            <div style='width:100%'>
+
+
+            {% comment %} <table style="width:100%">
+                <tr>
+                  <th>EMAIL</th>
+				  <th>FORM IMAGE</th>
+                  <th>APPROVED STATUS</th>
+                  <th>ACTIONS</th>
+                </tr>
+               
+                    {%for elm in forms %}
+                    <tr> 
+                        <td>{{elm.email}} </td>
+                        <td><a href='{{elm.image.url}}' download> Download Form Image </a></td>
+                        <td>{% if elm.approvedStatus %} Approved {% elif elm.disapprovedStatus %} Disapproved {%else%} Not Verified Yet {%endif%}</td>
+                        <td>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden"  name="step" value='2'>
+                                <input type="hidden"  name="email" value={{elm.email}}>
+                                <input type="hidden"  name="action" value='approve'>
+                                
+                                <button type="submit">Approve</button>
+                            </form>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden"  name="step" value='2'>
+                                <input type="hidden"  name="email" value={{elm.email}}>
+                                <input type="hidden"  name="action" value='disapprove'>
+                                
+                                <button type="submit">Disapprove</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {%endfor%} 
+               
+              </table> {% endcomment %}
+
+</div>
+
+{% endblock body %}
+
+
+    

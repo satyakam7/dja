@@ -1,0 +1,71 @@
+{% extends 'sport.html' %}
+{% load static %}
+{% block body %}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+</style>
+</head>
+
+<img src="{% static 'headers_and_logos/CRICKET.jpg' %}" class="content" />
+
+<div class="infocard">
+
+    <div class="container" style="text-align: center">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+         <div class="card">
+        <img src="{{ person.image_link }}" alt="{{ person.name }}" height="250px" style="width:100%">
+        <h3>{{ person.name }}</h3>
+        <h5>{{ person.type }}</h5>
+        <p class="title">{{ person.team }}</p>
+        <p class="title">{{ person.entryno }}</p>
+        <p>{{ person.hostel }}</p>
+        <a class="customa">
+            <div class="tooltipw3"><i class="fa fa-phone"></i>
+            <span class="tooltiptext">{{ person.mobileno }}</span>
+            </div>
+        </a>
+        <a class="customa" href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+        <a class="customa" href="{{ person.fb }}"><i class="fa fa-facebook"></i></a>
+        </div>
+        {% endfor %}
+    </div>	
+
+<h3 style="margin-top: 1em; text-align: center">Recent Achievements</h3>
+		<table class="center" style="width:90%; text-align: center">
+				<tr>
+				  <th>POSITION</th>
+				  <th>EVENT</th>
+				  <th>YEAR</th>
+				</tr>
+				<tr> <td>Gold</td> <td>52nd,53rd,54th interiit</td> <td>2017,2018,2019</td> </tr>
+				<tr> <td>Gold</td> <td>Sangram,Spardha</td> <td>2018</td> </tr>     
+				<tr> <td>Bronze</td> <td>Sportech</td> <td>2018</td> </tr>   
+		</table>
+
+<p style="margin-top: 1em; margin-bottom: 1em;">Our cricket team is one of the best college teams in Delhi. The team has great bonding within themselves as well as with other sports. We have always supported young talent and provided opportunities throughout the year to bring out the best out of them.</p>
+<img class="img-responsive" style="max-width: 90%; margin: auto" src="{% static 'sports/cricket/Cricket.JPG' %}" />
+<!-- <p style="margin-top: 1em; margin-bottom: 1em;">History:<br/>
+Our team has accomplished a lot in last couple of years.<br/>
+Gold at Udghosh 2015<br/>
+Silver at BOSM 2016<br/>
+Silver at Inter-IIT 2016<br/>
+Gold at Sportech 2017
+</p> -->
+<img class="img-responsive" style="max-width: 90%; margin: auto" src="{% static 'sports/cricket/WhatsApp Image 2017-07-19 at 1.23.15 PM.jpeg' %}" />
+<p style="margin-top: 1em; margin-bottom: 1em;">Facilities:<br/>The team practices everyday from 4:30-8:30 at the Cricket ground (In front of IIT hospital) and the nets have floodlight facility available for practicing after daylight. We have got the  best equipments one can play cricket with. We believe that in order to become better you need to implement what you practice so after practicing during the weekdays we play matches against other colleges during the weekend.</p>
+<div class="clearfix">
+    <img class="img-responsive pull-left" style="max-width: 48%; margin: auto;" src="{% static 'sports/cricket/Cricket 2.jpg' %}" />
+    <img class="img-responsive pull-right" style="max-width: 48%; margin: auto;" src="{% static 'sports/cricket/cricket 4.jpg' %}" />
+</div>
+<p style="margin-top: 1em; margin-bottom: 1em;">Cricket never stops here as we are busy with tournaments all year around. Although we prepare for INTER IIT and Sportech throughout the year we also participate in other college tournaments. In order to extract talent out we have intra-college tournaments like Inter - Hostel and IITPL in the even semester. IITPL (A professional league within IIT Delhi similar to IPL, where we had auctions too) was introduced just last year and the tournament was a great success with a lot of good players emerging out.  So there are a lot of opportunities provided you just need to grab them. See you in the field (We request you to come to the ground in shorts/tracks :D).</p>
+</div>
+{% endblock body %}

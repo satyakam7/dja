@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<head>
+    <title> BSA Pride </title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="{% static 'MainSite/swimming_steps.css' %}"  type="text/css">
+	<script src="{% static "MainSite/js/jquery.tabslet.min.js" %}" type="text/javascript"></script>
+</head>
+	
+	<div class='pride_div'>
+
+		<div class='achievements_div'>
+				
+				<h1 style="text-align:center"><b>STEPS TO REGISTER FOR INSTITUTE SWIMMING POOL</b>  </h1>
+				<div class="non-table-achievements">
+				<h3 style="text-align:center"><b>For students, staff and faculty</b>  </h3>
+				<ul>
+					<li>The <a href="{% static "forms/Students_swimming_pool_form.pdf" %}" download>registration form</a> has to be filled by the applicant and signed by the Medical Officer. </li>
+					<li>Upload a scanned copy of the above form using your institute email <a href="{% url 'mainsite:form_submission' %}" >here.</a></li>
+					<li>Your form would be verified and we will notify you via an email once it is done.</li>
+					<li>If your form has been approved, you can book the slots on the <a href="{% url 'mainsite:register' %}" >portal.</a></li>
+					<li>For booking a slot you have to provide your details, upload your photo and pay the fee online.</li>
+					<li>If your form is disapproved, you have to reupload a correct one in order to book slots.</li>
+				</ul>
+				</div>
+
+				<div class="non-table-achievements">
+				<h3 style="text-align:center"><b>For relatives of staff and faculty</b>  </h3>
+				<ul>
+					<li>The relative of a non-student member has to be registered <a href="{% url 'mainsite:relative_submission' %}">here </a>using the email the non-student member with a Govt. Identity proof.</li>
+					<li>The relative would be approved and a relative code would be conveyed via an email on approval.</li>
+					<li>If the relative is disapproved, the relative would have to registered again along with a valid proof of relation.</li>
+					<li>Approved relatives have to fill the <a href="{% static "forms/Students_swimming_pool_form.pdf" %}" download>registration form</a> get it and signed by the Medical Officer. </li>		
+					<li>A scanned copy of the above filled form has to be submitted <a href="{% url 'mainsite:form_submission' %}" >here</a> using the received relative code and the email of non-student member.</li>
+					<li>The above form would be verified and we will notify you via an email once it is done.</li>
+					<li>Upon approval of the form, you can book the slots on the <a href="{% url 'mainsite:register' %}" >portal</a> using the received relative code and the email of non-student member.</li>
+					<li>For booking a slot you have to provide your details, upload your photo and pay the fee online.</li>
+					<li>If your form is disapproved, you have to reupload a correct one in order to book slots.</li>
+					
+					
+				</ul>
+				</div>
+		</div>
+	</div>
+
+</div>	
+
+{% endblock body %}
+

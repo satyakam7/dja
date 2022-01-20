@@ -1,0 +1,136 @@
+.scrollcustom {
+    position: relative;
+    overflow: hidden;
+    background: r;
+    box-sizing: border-box;
+    max-width: 80em;
+    height: 10em;
+    margin: 1em auto;
+    margin-top: 0em !important;
+    text-align: center !important;
+}
+
+.scrollhead {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    background-color:red;
+    box-sizing: border-box;
+    max-width: 80em;
+    margin: 1em auto;
+    margin-bottom: 0em !important;
+    text-align: center !important;
+}
+
+.marquee {
+    top: 6em;
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Make it move! */
+@keyframes marquee {
+    0%   { top:   8em }
+    100% { top: -11em }
+}
+
+/* Make it look pretty */
+.microsoft .marquee {
+	margin: 0;
+    padding: 0 1em;
+    line-height: 1.5em;
+    font: 1em 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+
+.microsoft:before, .microsoft::before,
+.microsoft:after,  .microsoft::after {
+    left: 0;
+    z-index: 1;
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    max-width: 100%;
+    height: 2em;
+    background-image: linear-gradient(180deg, #FFF, rgba(255,255,255,0));
+}
+
+.microsoft:after, .microsoft::after {
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+.microsoft:before, .microsoft::before {
+    top: 0;
+}
+
+/* Style the links */
+.vanity {
+    color: #333;
+    text-align: center;
+    font: .75em 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+
+.vanity a, .microsoft a {
+    color: #1570A6;
+    transition: color .5s;
+    text-decoration: none;
+}
+
+.vanity a:hover, .microsoft a:hover {
+    color: #F65314;
+}
+
+/* Style toggle button */
+.toggle {
+	display: block;
+    margin: 2em auto;
+}
+
+.shadow{
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+.hovershadow {
+  transition: box-shadow .3s;
+  width: 98%;
+  margin: auto;
+  margin-bottom: 2em;
+  border-radius:10px;
+  border: 1px solid #ccc;
+  background: #fff;
+
+}
+/*.hovershadow:hover {
+  box-shadow: 0 0 20px rgba(33,33,33,.2);
+}*/
+
+.headone {
+    font-family: 'Roboto Slab', serif;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 0;
+}
+
+.static {
+    border-radius:10px;
+  border: 1px solid #ccc;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    display: inline-block;
+    width: 40%;
+    padding: 2em;
+    margin: 3em auto;
+    background: rgb(249,220,192); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(249,220,192,1) 0%, rgba(237,161,90,1) 99%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(249,220,192,1) 0%,rgba(237,161,90,1) 99%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(249,220,192,1) 0%,rgba(237,161,90,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9dcc0', endColorstr='#eda15a',GradientType=0 );
+}
+

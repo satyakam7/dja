@@ -1,0 +1,161 @@
+{% extends 'events.html' %}
+{% load static %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'MainSite/fantansyLeagueForm.css' %}">
+
+
+
+    <div class="testbox">
+      <form action="" method="POST" enctype = 'multipart/form-data'>
+	  
+		{% csrf_token %}
+		
+
+		
+		<div style = "color: red;">
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+	  
+        <h1>{{team1}} VS {{team2}}</h1>
+
+        <input type="hidden"  name="matchCode" value={{matchCode}}>
+        <input type="hidden"  name="team1" value={{team1}}>
+        <input type="hidden"  name="team2" value={{team2}}>
+
+        <h5>Choose 4 different batsmen</h5>
+		<div id="batsmenErrorDiv"><h6 style="color:red;">* The batsmen must be different</h6></div>
+        <label for="batsman1">Batsman 1 : </label>
+					<select class="form-control" id="batsman1" name="batsman1" onchange="checkValidSubmition()">
+		  			{%for p,code in batsmen %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+
+        <label for="batsman2">Batsman 2 : </label>
+					<select class="form-control" id="batsman2" name="batsman2" onchange="checkValidSubmition()">
+		  			{%for p,code in batsmen %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+        <label for="batsman3">Batsman 3 : </label>
+					<select class="form-control" id="batsman3" name="batsman3" onchange="checkValidSubmition()">
+		  			{%for p,code in batsmen %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+        <label for="batsman4">Batsman 4 : </label>
+					<select class="form-control" id="batsman4" name="batsman4" onchange="checkValidSubmition()">
+		  			{%for p,code in batsmen %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+          <hr>
+          <h5>Choose 4 different bowlers</h5>
+		  <div id="bowlersErrorDiv"><h6 style="color:red;">* The bowlers must be different</h6></div>
+        <label for="bowler1">Bowler 1 : </label>
+					<select class="form-control" id="bowler1" name="bowler1" onchange="checkValidSubmition()">
+		  			{%for p,code in bowlers %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+        <label for="bowler2">Bowler 2 : </label>
+					<select class="form-control" id="bowler2" name="bowler2" onchange="checkValidSubmition()">
+		  			{%for p,code in bowlers %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+        <label for="bowler3">Bowler 3 : </label>
+					<select class="form-control" id="bowler3" name="bowler3" onchange="checkValidSubmition()">
+		  			{%for p,code in bowlers %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+        <label for="bowler4">Bowler 4 : </label>
+					<select class="form-control" id="bowler4" name="bowler4" onchange="checkValidSubmition()">
+		  			{%for p,code in bowlers %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+          <hr>
+          <h5>Choose 3 different all-rounders</h5>
+		  <div id="allRoundersErrorDiv"><h6 style="color:red;">* The all-rounders must be different</h6></div>
+        <label for="allRounder1">All-Rounder 1 : </label>
+					<select class="form-control" id="allRounder1" name="allRounder1" onchange="checkValidSubmition()">
+		  			{%for p,code in allRounders %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+        <label for="allRounder2">All-Rounder 2 : </label>
+					<select class="form-control" id="allRounder2" name="allRounder2" onchange="checkValidSubmition()">
+		  			{%for p,code in allRounders %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+        <label for="allRounder3">All-Rounder 3 : </label>
+					<select class="form-control" id="allRounder3" name="allRounder3" onchange="checkValidSubmition()">
+		  			{%for p,code in allRounders %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+					</select>
+        <hr>
+		<div id="cvcErrorDiv"><h6 style="color:red;">* The captain and vice-captain must be different</h6></div>
+        <h5>Choose the team Captain :</h5>
+		<div id="captainErrorDiv" ><h6 style="color:red;">* The captain must be in the team selected</h6></div>
+					<select class="form-control" id="captain" name="captain" onchange="checkValidSubmition()">
+		  			{%for p,code in players %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+				</select>
+      
+        <h5>Choose the team Vice-Captain :</h5>
+		<div id="vice_captainErrorDiv" ><h6 style="color:red;">* The vice-captain must be in the team selected</h6></div>
+					<select class="form-control" id="vice_captain" name="vice_captain" onchange="checkValidSubmition()">
+		  			{%for p,code in players %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+				</select>
+        <hr>
+        <h5>Winner of the match :</h5>
+					<select class="form-control" id="winner" name="winner" onchange="checkValidSubmition()">
+		  			<option value=1>{{team1}}</option>
+            <option value=2>{{team2}}</option>	
+		   			
+				</select>
+        
+        <h5>Leading run scorer :</h5>
+					<select class="form-control" id="leadingScorer" name="leadingScorer" onchange="checkValidSubmition()">
+		  			{%for p,code in players %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+				</select>
+        
+        <h5>Leading wicket-taker :</h5>
+					<select class="form-control" id="leadingWicketTaker" name="leadingWicketTaker" onchange="checkValidSubmition()">
+		  			{%for p,code in players %}
+						<option value={{code}}>{{p.name}}</option>	
+		   			{%endfor%}
+				</select>
+		
+        <div class="btn-block">
+          <button type="submit" id="submitButton" style = "background-color: grey;" disabled >SUBMIT</button>
+        </div>
+      </form>
+      
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="{% static 'MainSite/fantansyLeagueForm.js' %}"></script>
+
+
+{% endblock body %}

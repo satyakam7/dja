@@ -1,0 +1,96 @@
+{% extends 'events.html' %}
+{% load static %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'MainSite/swfrom.css' %}">
+	<link rel="stylesheet" href="{% static 'MainSite/pride.css' %}"  type="text/css">
+	
+	<style>
+		.FAQheader{
+		font-size:500%;
+		color:black;
+		}
+      .question{
+	  font-size:300%;
+	  color:black;
+	  }
+	  .answer{
+	  font-size:200%;
+	  color:grey
+	  }
+	  @media only screen and (max-width: 600px) 
+		{
+			.question{
+		  font-size:100%;
+		  color:black;
+		  }
+		  .answer{
+		  font-size:80%;
+		  color:grey
+		  }
+		  .FAQheader{
+		font-size:200%;
+		color:black;
+		}
+		}
+     </style>
+
+
+
+    <div class="testbox">
+      <form action="" method="POST" enctype = 'multipart/form-data'>
+	  
+		{% csrf_token %}
+		
+
+		
+		<div style = "color: red;">
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+	  
+        <h1>Contact Us</h1>
+        <div class="item">
+		<textarea name="concern" rows="5" cols="100" placeholder = "Your message" required></textarea>
+		<textarea name="contact" rows="2" cols="100" placeholder = "Your details (optional)"></textarea>
+		</div>
+		
+        <div class="btn-block">
+          <button type="submit">SUBMIT</button>
+        </div>
+      </form>
+      
+    </div>
+	<!--
+	<div class="pride_div" >
+		<h1 class = "FAQheader"><u>Frequently Asked Questions</u></h1>
+		<h2 class = "question" >Question 1</h2>
+		<h2 class = "answer">Question 1</h2>
+		<hr>
+		
+		<h2 class = "question" >Question 2</h2>
+		<h2 class = "answer">Question 2</h2>
+		<hr>
+		
+		<h2 class = "question" >Question 3</h2>
+		<h2 class = "answer">Question 3</h2>
+		<hr>
+	</div>
+	-->
+	
+	
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="{% static 'MainSite/swform.js' %}"></script>
+
+
+{% endblock body %}
